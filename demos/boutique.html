@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maison Laurent — Boutique (concept démo Studio Vela)</title>
-<meta name="description" content="Concept de démonstration d'une vitrine e-commerce par Studio Vela : collections, produits, histoire de marque. Storefront uniquement.">
+<title>Maison Laurent — Boutique d'objets à Paris (concept démo Studio Vela)</title>
+<meta name="description" content="Concept démo Studio Vela : boutique vitrine d'objets pour la maison. Art de la table, bougies, papeterie. Storefront éditorial, sans paiement réel. Maquette fictive.">
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,20 +23,21 @@
   body[data-demo="shop"] h2 { font-weight: 600; }
   body[data-demo="shop"] h3 { font-weight: 600; }
   .shop-hero { background: radial-gradient(110% 90% at 15% -10%, rgba(47,93,68,0.12), transparent 55%); }
+  .cat-row { display:flex; flex-wrap:wrap; gap: var(--ds-2); margin-top: var(--ds-5); }
+  .cat-chip { background: var(--surface); border: 1px solid var(--line); padding: 8px 16px; border-radius: var(--d-pill); font-size: 0.88rem; font-weight: 500; }
   .prod-card { transition: transform 0.25s; }
   .prod-card:hover { transform: translateY(-5px); }
-  .prod-img { aspect-ratio: 4/5; border-radius: var(--d-radius); display: grid; place-items: center; color: rgba(255,255,255,0.85); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--ds-3); position: relative; }
-  .prod-tag { position: absolute; top: 10px; left: 10px; background: var(--accent); color: var(--accent-ink); font-size: 0.66rem; font-weight: 600; padding: 4px 10px; border-radius: var(--d-pill); letter-spacing: 0.06em; }
-  .prod-name { font-family: var(--head-font); font-size: 1.25rem; }
+  .prod-img { aspect-ratio: 4/5; border-radius: var(--d-radius); display: flex; align-items: flex-end; margin-bottom: var(--ds-3); position: relative; overflow: hidden; }
+  .prod-img .lbl { position: relative; z-index: 2; margin: 10px; background: rgba(0,0,0,0.35); color:#fff; padding:5px 9px; border-radius:7px; font-size:0.68rem; }
+  .prod-tag { position: absolute; top: 10px; left: 10px; z-index:2; background: var(--accent); color: var(--accent-ink); font-size: 0.66rem; font-weight: 600; padding: 4px 10px; border-radius: var(--d-pill); letter-spacing: 0.06em; }
+  .prod-name { font-family: var(--head-font); font-size: 1.3rem; }
   .prod-price { color: var(--muted); font-size: 0.95rem; }
-  .collection-banner { aspect-ratio: 21/9; border-radius: var(--d-radius-lg); display: flex; flex-direction: column; justify-content: center; padding: var(--ds-7); color: #f5f3ec; position: relative; overflow: hidden; }
-  @media (max-width:640px){ .collection-banner{ aspect-ratio:4/3; } }
+  .collection-banner { border-radius: var(--d-radius-lg); display: flex; flex-direction: column; justify-content: center; padding: var(--ds-7); color: #f5f3ec; position: relative; overflow: hidden; min-height: 280px; }
 </style>
 </head>
 <body data-demo="shop">
 
 <a class="d-skip" href="#main">Aller au contenu</a>
-
 <div class="demo-ribbon">Concept démo créé par Studio Vela · <a href="../index.html">Retour au portfolio</a></div>
 
 <header class="d-header">
@@ -46,7 +47,7 @@
       <a href="#collection">Collection</a>
       <a href="#produits">Produits</a>
       <a href="#histoire">La maison</a>
-      <a href="#avantages">Avantages</a>
+      <a href="#newsletter">Nouveautés</a>
     </nav>
     <a class="d-btn d-btn-primary" href="#collection">Voir la collection</a>
   </div>
@@ -55,12 +56,19 @@
 <main id="main">
   <section class="d-hero shop-hero" id="top">
     <div class="d-container d-reveal">
-      <p class="d-eyebrow">Boutique · Maison Laurent</p>
-      <h1>Vos produits,<br>mis en valeur.</h1>
-      <p class="d-lead">Des objets choisis pour durer, présentés simplement. Une sélection soignée, faite pour être regardée avant d'être achetée.</p>
+      <p class="d-eyebrow">Boutique · objets pour la maison</p>
+      <h1>Objets choisis pour une maison calme.</h1>
+      <p class="d-lead">Une sélection resserrée de pièces utiles et belles, faites pour durer. On préfère proposer peu, mais bien.</p>
       <div class="d-hero-actions">
         <a class="d-btn d-btn-primary d-btn-lg" href="#collection">Voir la collection</a>
         <a class="d-btn d-btn-ghost d-btn-lg" href="#produits">Découvrir les nouveautés</a>
+      </div>
+      <div class="cat-row">
+        <span class="cat-chip">Art de la table</span>
+        <span class="cat-chip">Bougies &amp; senteurs</span>
+        <span class="cat-chip">Carnets &amp; papeterie</span>
+        <span class="cat-chip">Objets décoratifs</span>
+        <span class="cat-chip">Coffrets cadeaux</span>
       </div>
     </div>
   </section>
@@ -69,67 +77,99 @@
     <div class="d-strip-inner">
       <span>Sélection soignée</span>
       <span>Pièces durables</span>
-      <span>Fabrication locale</span>
-      <span>Emballage soigné</span>
+      <span>Emballage cadeau</span>
+      <span>Conseil par message</span>
     </div>
   </div>
 
+  <!-- FEATURED COLLECTION -->
   <section class="d-section" id="collection">
     <div class="d-container">
       <div class="collection-banner d-reveal" style="background:linear-gradient(120deg,#2f5d44,#1f3f2e)">
-        <p style="font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;opacity:0.8;margin-bottom:var(--ds-3)">Collection en vedette</p>
-        <h2 style="color:#f5f3ec;font-size:clamp(1.8rem,4.5vw,3rem);margin-bottom:var(--ds-3)">L'essentiel de la saison</h2>
-        <p style="opacity:0.85;max-width:30em;margin-bottom:var(--ds-5)">Une sélection resserrée de pièces qui vont ensemble, pensées pour le quotidien.</p>
-        <a class="d-btn d-btn-primary" href="#produits" style="background:#f5f3ec;color:#1f2a22;width:fit-content">Découvrir →</a>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);background-size:24px 24px;opacity:.5"></div>
+        <div style="position:relative;z-index:2;max-width:34em">
+          <p style="font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;opacity:0.8;margin-bottom:var(--ds-3)">Collection en vedette</p>
+          <h2 style="color:#f5f3ec;font-size:clamp(1.8rem,4.5vw,3rem);margin-bottom:var(--ds-3)">Maison Calme — l'essentiel de la saison</h2>
+          <p style="opacity:0.85;margin-bottom:var(--ds-5)">Une sélection de pièces qui vont ensemble&nbsp;: matières naturelles, teintes douces, objets du quotidien.</p>
+          <a class="d-btn d-btn-primary" href="#produits" style="background:#f5f3ec;color:#1f2a22;width:fit-content">Découvrir →</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- PRODUCT GRID -->
   <section class="d-section" id="produits" style="background:var(--surface)">
     <div class="d-container">
-      <div class="d-head d-reveal">
-        <p class="d-tag">Produits</p>
-        <h2>Quelques pièces</h2>
-        <p>Aperçu de la grille produits. (Emplacements visuels de démonstration.)</p>
-      </div>
+      <div class="d-head d-reveal"><p class="d-tag">Produits</p><h2>Quelques pièces</h2><p>Aperçu de la sélection. Vitrine uniquement&nbsp;: pas de panier ni de paiement.</p></div>
       <div class="d-grid-3">
-        <article class="prod-card d-reveal"><div class="prod-img" style="background:#3a6b50"><span class="prod-tag">Nouveau</span>Visuel produit</div><p class="prod-name">Carnet relié</p><p class="prod-price">24€</p></article>
-        <article class="prod-card d-reveal"><div class="prod-img" style="background:#54483a">Visuel produit</div><p class="prod-name">Mug en grès</p><p class="prod-price">18€</p></article>
-        <article class="prod-card d-reveal"><div class="prod-img" style="background:#2f5d44">Visuel produit</div><p class="prod-name">Tote bag toile</p><p class="prod-price">22€</p></article>
-        <article class="prod-card d-reveal"><div class="prod-img" style="background:#6b5d4a"><span class="prod-tag">Nouveau</span>Visuel produit</div><p class="prod-name">Bougie parfumée</p><p class="prod-price">29€</p></article>
-        <article class="prod-card d-reveal"><div class="prod-img" style="background:#3f4d3a">Visuel produit</div><p class="prod-name">Plaid laine</p><p class="prod-price">65€</p></article>
-        <article class="prod-card d-reveal"><div class="prod-img" style="background:#4a5448">Visuel produit</div><p class="prod-name">Set de table</p><p class="prod-price">16€</p></article>
+        <article class="prod-card d-reveal"><div class="prod-img" style="background:linear-gradient(160deg,#3a6b50,#234132)"><span class="prod-tag">Nouveau</span><span class="lbl">Flatlay produit · à venir</span></div><p class="prod-name">Bougie Cèdre Matin</p><p class="prod-price">29€</p></article>
+        <article class="prod-card d-reveal"><div class="prod-img" style="background:linear-gradient(160deg,#6b5d4a,#473d30)"><span class="lbl">Flatlay produit · à venir</span></div><p class="prod-name">Carnet Toile Naturelle</p><p class="prod-price">18€</p></article>
+        <article class="prod-card d-reveal"><div class="prod-img" style="background:linear-gradient(160deg,#54483a,#322a20)"><span class="lbl">Détail matière · à venir</span></div><p class="prod-name">Plateau Noyer</p><p class="prod-price">42€</p></article>
+        <article class="prod-card d-reveal"><div class="prod-img" style="background:linear-gradient(160deg,#2f5d44,#1f3f2e)"><span class="lbl">Packaging · à venir</span></div><p class="prod-name">Tasse Grès Ivoire</p><p class="prod-price">16€</p></article>
+        <article class="prod-card d-reveal"><div class="prod-img" style="background:linear-gradient(160deg,#4a5448,#2f352c)"><span class="prod-tag">Coffret</span><span class="lbl">Éditorial · à venir</span></div><p class="prod-name">Coffret Maison Calme</p><p class="prod-price">64€</p></article>
+        <article class="prod-card d-reveal"><div class="prod-img" style="background:linear-gradient(160deg,#3f4d3a,#262e22)"><span class="lbl">Flatlay produit · à venir</span></div><p class="prod-name">Set de table lin</p><p class="prod-price">22€</p></article>
       </div>
-      <p class="d-disclaimer d-reveal">Concept démo&nbsp;: vitrine produit uniquement, sans panier ni paiement réels. Produits, prix et stock sont fictifs et illustratifs.</p>
+      <p class="d-demo-note d-reveal" style="margin-top:var(--ds-5)"><strong>Concept vitrine</strong> — aucune commande réelle n'est possible depuis cette maquette. Produits, prix et stock sont fictifs et affichés à titre de démonstration.</p>
     </div>
   </section>
 
+  <!-- BRAND STORY -->
   <section class="d-section" id="histoire">
     <div class="d-container d-split">
       <div class="d-reveal">
         <p class="d-tag">La maison</p>
         <h2 style="font-size:clamp(2rem,5vw,3rem);margin-bottom:var(--ds-4)">Une sélection, pas un catalogue</h2>
-        <p style="color:var(--muted);font-size:1.05rem;margin-bottom:var(--ds-3)">Maison Laurent réunit des objets choisis un par un, auprès d'artisans et de petites fabriques. On préfère proposer peu, mais bien&nbsp;: des pièces qui tiennent dans le temps et qu'on garde.</p>
-        <p style="color:var(--muted);font-size:1.05rem">L'idée du site&nbsp;: donner envie de regarder, de comprendre d'où vient chaque produit, puis de passer commande ou de venir en boutique.</p>
+        <p style="color:var(--muted);font-size:1.05rem;margin-bottom:var(--ds-3)">Maison Laurent réunit des objets choisis un par un, auprès d'artisans et de petites fabriques. Des pièces qui tiennent dans le temps et qu'on garde, plutôt qu'un catalogue interminable.</p>
+        <p style="color:var(--muted);font-size:1.05rem">L'idée du site&nbsp;: donner envie de regarder, comprendre d'où vient chaque produit, puis passer commande ou venir en boutique.</p>
       </div>
-      <div class="d-gallery d-reveal" style="grid-template-columns:1fr 1fr">
-        <div class="d-tile" style="background:#2f5d44;aspect-ratio:1/1.2"><span>Atelier</span></div>
-        <div class="d-tile" style="background:#54483a;aspect-ratio:1/1.2"><span>Matières</span></div>
+      <div class="d-grid-2 d-reveal" style="gap:var(--ds-3)">
+        <div class="d-media" style="aspect-ratio:1/1.2;min-height:0"><div style="position:absolute;inset:0;background:linear-gradient(160deg,#2f5d44,#1f3f2e)"></div><span class="d-media-label"><b>Photo · à venir</b>Atelier, matières naturelles.</span></div>
+        <div class="d-media" style="aspect-ratio:1/1.2;min-height:0"><div style="position:absolute;inset:0;background:linear-gradient(160deg,#54483a,#322a20)"></div><span class="d-media-label"><b>Photo · à venir</b>Détail packaging soigné.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="d-section d-banner" id="avantages">
+  <!-- POSITIONING / VALUES -->
+  <section class="d-section" style="background:var(--surface)">
     <div class="d-container">
-      <div class="d-strip-inner" style="color:inherit;padding-bottom:var(--ds-6)">
-        <span>Livraison soignée</span>
-        <span>Retours simples</span>
-        <span>Paiement sécurisé</span>
-        <span>Conseil par message</span>
+      <div class="d-head d-reveal"><p class="d-tag">Pourquoi Maison Laurent</p><h2>Matière, qualité, cadeau</h2></div>
+      <div class="d-values">
+        <div class="d-value d-reveal"><span class="d-value-ic">❖</span><div><h4>Matières naturelles</h4><p>Grès, noyer, lin, cire végétale.</p></div></div>
+        <div class="d-value d-reveal"><span class="d-value-ic">◆</span><div><h4>Pensé pour durer</h4><p>Des objets utiles, pas jetables.</p></div></div>
+        <div class="d-value d-reveal"><span class="d-value-ic">✚</span><div><h4>Idéal cadeau</h4><p>Coffrets et emballage soigné.</p></div></div>
+        <div class="d-value d-reveal"><span class="d-value-ic">◎</span><div><h4>Petites séries</h4><p>Sélection courte, renouvelée.</p></div></div>
       </div>
-      <h2>Une pièce vous plaît ?</h2>
-      <p>Parcourez la collection complète ou contactez-nous pour un conseil.</p>
-      <a class="d-btn d-btn-primary d-btn-lg" href="#produits">Voir la collection</a>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="d-section d-banner" id="newsletter">
+    <div class="d-container">
+      <h2>Les nouveautés, sans le bruit</h2>
+      <p>Quelques nouveautés par saison, c'est tout. Pas de spam.</p>
+      <form class="d-news d-reveal" data-demo-form aria-label="Inscription nouveautés (démonstration)" style="margin:0 auto">
+        <div class="d-news-row">
+          <input type="email" placeholder="votre@email.fr" aria-label="Adresse email">
+          <button class="d-btn d-btn-primary" type="submit" style="background:var(--bg);color:var(--text)">S'inscrire</button>
+        </div>
+        <p class="d-form-note" style="justify-content:center;color:rgba(255,255,255,0.85)">Formulaire de démonstration — aucune donnée n'est envoyée.</p>
+        <p class="d-form-status" role="status" tabindex="-1" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO + clarity -->
+  <section class="d-section d-pad-sm">
+    <div class="d-container">
+      <div class="d-split">
+        <div class="d-info-card d-reveal">
+          <h3>La boutique</h3>
+          <div class="d-info-row"><span class="d-info-k">Atelier</span><span class="d-info-v">Atelier fictif — Paris <em>(démo)</em></span></div>
+          <div class="d-info-row"><span class="d-info-k">Tél</span><span class="d-info-v"><a href="tel:+33180914425">01 80 91 44 25</a></span></div>
+          <div class="d-info-row"><span class="d-info-k">Email</span><span class="d-info-v"><a href="mailto:hello@maisonlaurent-demo.fr">hello@maisonlaurent-demo.fr</a></span></div>
+        </div>
+        <div class="d-demo-note d-reveal" style="align-self:center">Concept démo créé par Studio Vela. Ce site est une maquette fictive destinée à montrer une direction possible pour ce type d'activité. Aucune commande ni paiement n'est actif.</div>
+      </div>
     </div>
   </section>
 </main>
@@ -139,13 +179,13 @@
     <div class="d-footer-grid">
       <div>
         <a class="d-logo" href="#top"><span class="lmark">ML</span> Maison Laurent</a>
-        <p class="d-footer-about">Boutique d'objets choisis. Une sélection soignée de pièces durables, présentée simplement.</p>
+        <p class="d-footer-about">Boutique d'objets choisis pour la maison. Sélection soignée, matières naturelles, vitrine éditoriale.</p>
       </div>
       <div><h4>Boutique</h4><ul><li><a href="#collection">Collection</a></li><li><a href="#produits">Produits</a></li><li><a href="#histoire">La maison</a></li></ul></div>
-      <div><h4>Aide</h4><ul><li>Livraison &amp; retours</li><li>Nous contacter</li><li>Paris (adresse fictive)</li></ul></div>
+      <div><h4>Infos</h4><ul><li>Atelier fictif — Paris (démo)</li><li><a href="tel:+33180914425">01 80 91 44 25</a></li><li>Vitrine — sans paiement</li></ul></div>
     </div>
     <div class="d-studio-note">
-      <span>Ce site est un concept de démonstration conçu pour montrer une direction possible.</span>
+      <span>Informations fictives utilisées uniquement pour cette démonstration.</span>
       <a href="../index.html">Concept démo par Studio Vela — Retour au portfolio →</a>
     </div>
   </div>

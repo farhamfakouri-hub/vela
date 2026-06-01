@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio Lina — Salon de beauté à Paris (concept démo Studio Vela)</title>
-<meta name="description" content="Concept de démonstration d'un site de salon de coiffure et beauté par Studio Vela : soins, coiffure, prise de rendez-vous.">
+<title>Studio Lina — Salon de coiffure &amp; beauté à Paris 16 (concept démo Studio Vela)</title>
+<meta name="description" content="Concept démo Studio Vela : salon de coiffure et beauté à Paris 16 (Passy). Diagnostic, brushing, soin, coloration. Prise de rendez-vous. Maquette fictive.">
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,1,400&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../demo-styles.css">
 <style>
   body[data-demo="salon"] {
@@ -20,16 +20,20 @@
     --footer-bg: #2e2230; --footer-h: #faf5f0; --footer-text: rgba(250,245,240,0.7); --footer-line: rgba(250,245,240,0.14);
   }
   body[data-demo="salon"] h1, body[data-demo="salon"] h2, body[data-demo="salon"] h3 { font-weight: 500; letter-spacing: -0.02em; }
-  .salon-hero { background: radial-gradient(120% 90% at 85% -10%, rgba(176,106,138,0.14), transparent 55%); }
+  body[data-demo="salon"] .d-eyebrow { font-style: italic; font-family: var(--head-font); text-transform: none; letter-spacing: 0; font-size: 1.05rem; color: var(--accent); }
+  .salon-hero { position: relative; }
+  .salon-hero-grid { display: grid; grid-template-columns: 1fr; gap: var(--ds-6); align-items: center; }
+  .salon-hero .d-media { min-height: 360px; }
+  @media (min-width:900px){ .salon-hero-grid { grid-template-columns: 1.05fr 0.95fr; } }
   .ba-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-3); }
-  .ba-tile { aspect-ratio: 3/4; border-radius: var(--d-radius); display: grid; place-items: center; font-weight: 600; font-size: 0.85rem; position: relative; }
-  .ba-label { position: absolute; top: 12px; left: 12px; background: rgba(46,34,48,0.55); color: #fff; font-size: 0.7rem; padding: 4px 10px; border-radius: var(--d-pill); letter-spacing: 0.05em; }
+  .ba-tile { aspect-ratio: 3/4; border-radius: var(--d-radius); display: flex; align-items: flex-end; font-weight: 600; font-size: 0.8rem; position: relative; overflow: hidden; }
+  .ba-badge { position: absolute; top: 12px; left: 12px; z-index: 2; background: rgba(46,34,48,0.6); color: #fff; font-size: 0.7rem; padding: 4px 10px; border-radius: var(--d-pill); letter-spacing: 0.05em; }
+  .ba-tile span.lbl { position: relative; z-index: 2; margin: 12px; background: rgba(0,0,0,0.4); color:#fff; padding:6px 10px; border-radius:8px; font-weight:500; font-size:0.74rem; }
 </style>
 </head>
 <body data-demo="salon">
 
 <a class="d-skip" href="#main">Aller au contenu</a>
-
 <div class="demo-ribbon">Concept démo créé par Studio Vela · <a href="../index.html">Retour au portfolio</a></div>
 
 <header class="d-header">
@@ -38,6 +42,7 @@
     <nav class="d-nav-links" aria-label="Navigation">
       <a href="#soins">Soins</a>
       <a href="#resultats">Avant / après</a>
+      <a href="#highlights">Le salon</a>
       <a href="#rdv">Rendez-vous</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -47,87 +52,130 @@
 
 <main id="main">
   <section class="d-hero salon-hero" id="top">
-    <div class="d-container d-reveal">
-      <p class="d-eyebrow">Coiffure &amp; beauté · Paris</p>
-      <h1>Révélez votre plus belle version.</h1>
-      <p class="d-lead">Coiffure, couleur et soins du visage dans un salon calme et lumineux. On prend le temps de comprendre ce qui vous va vraiment.</p>
-      <div class="d-hero-actions">
-        <a class="d-btn d-btn-primary d-btn-lg" href="#rdv">Prendre rendez-vous</a>
-        <a class="d-btn d-btn-ghost d-btn-lg" href="#soins">Voir les soins</a>
+    <div class="d-container salon-hero-grid d-reveal">
+      <div>
+        <p class="d-eyebrow">Coiffure &amp; beauté · Paris 16 · Passy</p>
+        <h1>Des soins précis,<br>une beauté naturelle.</h1>
+        <p class="d-lead">Un moment pour soi, dans un salon calme et lumineux. On prend le temps du diagnostic avant chaque couleur ou soin, pour un résultat qui vous ressemble.</p>
+        <div class="d-hero-actions">
+          <a class="d-btn d-btn-primary d-btn-lg" href="#rdv">Prendre rendez-vous</a>
+          <a class="d-btn d-btn-ghost d-btn-lg" href="#soins">Voir les soins</a>
+        </div>
+      </div>
+      <div class="d-media" aria-hidden="false">
+        <div style="position:absolute;inset:0;background:linear-gradient(160deg,#e7d2dd,#cba9bb 60%,#9d7a90)"></div>
+        <span class="d-media-label"><b>Photo · à venir</b>Lumière douce, fauteuil de coiffure, ambiance calme et soignée.</span>
       </div>
     </div>
   </section>
 
   <div class="d-strip">
     <div class="d-strip-inner">
-      <span>Coiffure &amp; couleur</span>
-      <span>Soins du visage</span>
+      <span>Diagnostic avant chaque couleur</span>
       <span>Produits doux</span>
-      <span>Conseil personnalisé</span>
+      <span>Coiffure, couleur &amp; soin</span>
+      <span>Sur rendez-vous</span>
     </div>
   </div>
 
+  <!-- SERVICES -->
   <section class="d-section" id="soins">
     <div class="d-container">
-      <div class="d-head d-reveal">
-        <p class="d-tag">Nos soins</p>
-        <h2>Le menu</h2>
-        <p>Des prestations claires, pour cheveux et visage.</p>
-      </div>
+      <div class="d-head d-reveal"><p class="d-tag">Le menu des soins</p><h2>Nos prestations</h2><p>Chaque prestation commence par un échange sur vos cheveux et vos envies.</p></div>
       <div class="d-grid-3">
-        <div class="d-card d-reveal"><h3>Coupe &amp; coiffage</h3><p>Coupe sur-mesure, brushing et coiffage adaptés à votre style.</p><p style="color:var(--accent);font-weight:700;margin-top:var(--ds-3)">dès 45€</p></div>
-        <div class="d-card d-reveal"><h3>Couleur &amp; balayage</h3><p>Coloration, mèches et balayage avec un rendu naturel.</p><p style="color:var(--accent);font-weight:700;margin-top:var(--ds-3)">dès 70€</p></div>
-        <div class="d-card d-reveal"><h3>Soin du visage</h3><p>Nettoyage, hydratation et éclat pour une peau reposée.</p><p style="color:var(--accent);font-weight:700;margin-top:var(--ds-3)">dès 55€</p></div>
-        <div class="d-card d-reveal"><h3>Soin cheveux</h3><p>Masque profond et rituel réparateur pour cheveux abîmés.</p><p style="color:var(--accent);font-weight:700;margin-top:var(--ds-3)">dès 35€</p></div>
-        <div class="d-card d-reveal"><h3>Coiffure mariage</h3><p>Essai et coiffure le jour J, pensés pour tenir toute la journée.</p><p style="color:var(--accent);font-weight:700;margin-top:var(--ds-3)">sur devis</p></div>
-        <div class="d-card d-reveal"><h3>Maquillage</h3><p>Mise en beauté pour un événement ou une occasion spéciale.</p><p style="color:var(--accent);font-weight:700;margin-top:var(--ds-3)">dès 40€</p></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Diagnostic Cheveux</h3><span class="d-svc-price">20€</span></div><p>Analyse de la nature du cheveu et conseil avant couleur ou soin.</p><p class="d-svc-for">Recommandé avant une première coloration.</p><div class="d-chips"><span class="d-chip">20 min</span><span class="d-chip d-chip-accent">Conseillé</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Brushing Signature</h3><span class="d-svc-price">dès 38€</span></div><p>Mise en forme et brushing adaptés à votre coupe et votre style.</p><p class="d-svc-for">Pour un rendu impeccable, événement ou quotidien.</p><div class="d-chips"><span class="d-chip">45 min</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Soin Profond Nutrition</h3><span class="d-svc-price">dès 55€</span></div><p>Masque réparateur en profondeur pour cheveux secs ou abîmés.</p><p class="d-svc-for">Idéal après l'été ou des colorations répétées.</p><div class="d-chips"><span class="d-chip">50 min</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Coloration Racines</h3><span class="d-svc-price">dès 62€</span></div><p>Reprise des racines avec un rendu naturel et homogène.</p><p class="d-svc-for">Pour entretenir une couleur déjà en place.</p><div class="d-chips"><span class="d-chip">90 min</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Coupe + Brushing</h3><span class="d-svc-price">dès 68€</span></div><p>Coupe sur-mesure suivie d'un brushing soigné.</p><p class="d-svc-for">La prestation la plus demandée.</p><div class="d-chips"><span class="d-chip">75 min</span><span class="d-chip d-chip-accent">Populaire</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Coiffure d'occasion</h3><span class="d-svc-price">sur devis</span></div><p>Essai et mise en beauté pour mariage ou événement.</p><p class="d-svc-for">Sur rendez-vous, avec essai préalable.</p><div class="d-chips"><span class="d-chip">Sur mesure</span></div></div>
       </div>
+      <p class="d-demo-note d-reveal" style="margin-top:var(--ds-5)"><strong>Tarifs indicatifs</strong> affichés à titre de démonstration. Le prix exact dépend de la longueur et de la prestation.</p>
     </div>
   </section>
 
+  <!-- BEFORE / AFTER -->
   <section class="d-section" id="resultats" style="background:var(--surface)">
     <div class="d-container">
-      <div class="d-head d-reveal">
-        <p class="d-tag">Avant / après</p>
-        <h2>Quelques transformations</h2>
-        <p>Emplacements de démonstration&nbsp;: vos vraies photos avant/après prendront place ici.</p>
-      </div>
-      <div class="ba-wrap d-reveal" style="max-width:560px">
-        <div class="ba-tile" style="background:#e7d6df;color:#7c6e7a"><span class="ba-label">Avant</span>Photo démo</div>
-        <div class="ba-tile" style="background:#cba9bb;color:#3a2c3a"><span class="ba-label">Après</span>Photo démo</div>
-      </div>
-      <p class="d-disclaimer d-reveal">Concept démo&nbsp;: aucun résultat réel n'est présenté ici. Ces blocs montrent simplement comment une vraie section avant/après serait disposée.</p>
-    </div>
-  </section>
-
-  <section class="d-section" id="rdv">
-    <div class="d-container d-split">
-      <div class="d-reveal">
-        <p class="d-tag">Prendre rendez-vous</p>
-        <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:var(--ds-4)">On vous attend</h2>
-        <p style="color:var(--muted);margin-bottom:var(--ds-5)">Choisissez votre créneau en ligne ou appelez-nous. On confirme tout de suite et on vous conseille avant le jour J.</p>
-        <div class="d-hours">
-          <div><span>Mardi – Samedi</span><span>9h30 – 19h</span></div>
-          <div><span>Lundi &amp; Dimanche</span><span>Fermé</span></div>
+      <div class="d-head d-reveal"><p class="d-tag">Avant / après</p><h2>Quelques transformations</h2></div>
+      <div class="d-split">
+        <div class="ba-wrap d-reveal">
+          <div class="ba-tile" style="background:linear-gradient(160deg,#d8c2cd,#b89aa8)"><span class="ba-badge">Avant</span><span class="lbl">Photo démo</span></div>
+          <div class="ba-tile" style="background:linear-gradient(160deg,#c08aa6,#8d5d77)"><span class="ba-badge">Après</span><span class="lbl">Photo démo</span></div>
         </div>
-        <p style="color:var(--muted);font-size:0.9rem;margin-top:var(--ds-3)">Horaires de démonstration.</p>
-      </div>
-      <div class="d-card d-reveal" style="text-align:center">
-        <h3 style="margin-bottom:var(--ds-3)">Votre prochain rendez-vous</h3>
-        <p style="margin-bottom:var(--ds-5)">Réservez en quelques secondes, sans créer de compte.</p>
-        <a class="d-btn d-btn-primary d-btn-lg" href="#top" style="width:100%">Prendre rendez-vous</a>
+        <div class="d-reveal">
+          <h3 style="font-size:1.5rem;margin-bottom:var(--ds-3)">Un résultat qu'on explique</h3>
+          <p style="color:var(--muted);margin-bottom:var(--ds-4)">Avant chaque transformation, on prend le temps de comprendre ce que vous voulez et ce que vos cheveux supportent. Le but&nbsp;: un résultat naturel, facile à garder à la maison.</p>
+          <div class="d-demo-note"><strong>Zone de démonstration</strong> — visuels à remplacer par de vraies réalisations client. Aucun résultat réel n'est présenté ici.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="d-section" id="faq" style="background:var(--surface)">
+  <!-- HIGHLIGHTS / VALUES -->
+  <section class="d-section" id="highlights">
     <div class="d-container">
-      <div class="d-head d-reveal"><p class="d-tag">FAQ</p><h2>Questions fréquentes</h2></div>
-      <div class="d-faq d-reveal">
-        <details open><summary>Faut-il un essai avant une couleur ?</summary><div class="d-faq-body">Pour un changement important, on propose un diagnostic gratuit pour choisir la teinte ensemble avant le rendez-vous.</div></details>
-        <details><summary>Quels produits utilisez-vous ?</summary><div class="d-faq-body">Des gammes douces, respectueuses du cuir chevelu et de la fibre. Les marques exactes vous sont indiquées en salon.</div></details>
-        <details><summary>Peut-on annuler un rendez-vous ?</summary><div class="d-faq-body">Oui, prévenez-nous au moins 24h à l'avance pour libérer le créneau.</div></details>
+      <div class="d-head d-reveal"><p class="d-tag">Le salon</p><h2>Ce qui fait la différence</h2></div>
+      <div class="d-values">
+        <div class="d-value d-reveal"><span class="d-value-ic">◇</span><div><h4>Diagnostic d'abord</h4><p>On évalue le cheveu avant toute couleur.</p></div></div>
+        <div class="d-value d-reveal"><span class="d-value-ic">♢</span><div><h4>Produits doux</h4><p>Des gammes respectueuses du cuir chevelu.</p></div></div>
+        <div class="d-value d-reveal"><span class="d-value-ic">◈</span><div><h4>Conseil maison</h4><p>Vous repartez avec une routine simple.</p></div></div>
+        <div class="d-value d-reveal"><span class="d-value-ic">✦</span><div><h4>Cadre calme</h4><p>Un vrai moment pour soi, sans précipitation.</p></div></div>
       </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="d-section" id="rdv" style="background:var(--surface)">
+    <div class="d-container">
+      <div class="d-head d-reveal"><p class="d-tag">Rendez-vous</p><h2>Réserver votre moment</h2></div>
+      <div class="d-split">
+        <form class="d-form d-reveal" data-demo-form aria-label="Formulaire de rendez-vous (démonstration)">
+          <div class="d-form-grid">
+            <div class="d-field"><label for="s-name">Nom</label><input id="s-name" type="text" placeholder="Votre nom"></div>
+            <div class="d-field"><label for="s-phone">Téléphone</label><input id="s-phone" type="tel" placeholder="06 ..."></div>
+            <div class="d-field d-col-2"><label for="s-service">Prestation souhaitée</label><select id="s-service"><option>Diagnostic Cheveux</option><option>Brushing Signature</option><option>Soin Profond Nutrition</option><option>Coloration Racines</option><option>Coupe + Brushing</option><option>Coiffure d'occasion</option></select></div>
+            <div class="d-field"><label for="s-day">Jour souhaité</label><input id="s-day" type="date"></div>
+            <div class="d-field"><label for="s-time">Plage horaire</label><select id="s-time"><option>Matin</option><option>Après-midi</option><option>Fin de journée</option></select></div>
+            <div class="d-field d-col-2"><label for="s-msg">Vos attentes (optionnel)</label><textarea id="s-msg" placeholder="Couleur, longueur, occasion..."></textarea></div>
+          </div>
+          <p class="d-form-note">Formulaire de démonstration — aucune donnée n'est envoyée.</p>
+          <button class="d-btn d-btn-primary d-btn-lg" type="submit" style="width:100%">Prendre rendez-vous</button>
+          <p class="d-form-status" role="status" tabindex="-1" hidden></p>
+        </form>
+        <div class="d-reveal" style="display:flex;flex-direction:column;gap:var(--ds-4)">
+          <div class="d-info-card">
+            <h3>Horaires</h3>
+            <div class="d-info-row"><span class="d-info-k">Lundi</span><span class="d-info-v">Fermé</span></div>
+            <div class="d-info-row"><span class="d-info-k">Mar–Ven</span><span class="d-info-v">10h – 19h30</span></div>
+            <div class="d-info-row"><span class="d-info-k">Samedi</span><span class="d-info-v">9h30 – 18h30</span></div>
+            <div class="d-info-row"><span class="d-info-k">Dimanche</span><span class="d-info-v">Fermé</span></div>
+          </div>
+          <div class="d-info-card">
+            <h3>Nous trouver</h3>
+            <div class="d-info-row"><span class="d-info-k">Adresse</span><span class="d-info-v">8 avenue fictive Mozart, 75016 Paris <em>(démo)</em></span></div>
+            <div class="d-info-row"><span class="d-info-k">Tél</span><span class="d-info-v"><a href="tel:+33179331844">01 79 33 18 44</a></span></div>
+            <div class="d-info-row"><span class="d-info-k">Email</span><span class="d-info-v"><a href="mailto:contact@studiolina-demo.fr">contact@studiolina-demo.fr</a></span></div>
+            <div class="d-info-row"><span class="d-info-k">Quartier</span><span class="d-info-v">Passy (Paris 16)</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="d-section" id="faq">
+    <div class="d-container">
+      <div class="d-head d-reveal"><p class="d-tag">Salon à Paris 16</p><h2>Questions fréquentes</h2><p>Salon de coiffure et beauté dans le quartier de Passy (Paris 16), pour coupe, couleur et soins.</p></div>
+      <div class="d-faq d-reveal">
+        <details open><summary>Faut-il un diagnostic avant une couleur ?</summary><div class="d-faq-body">Pour un changement important, oui&nbsp;: le diagnostic permet de choisir la bonne teinte et d'éviter les mauvaises surprises.</div></details>
+        <details><summary>La couleur va-t-elle abîmer mes cheveux ?</summary><div class="d-faq-body">On adapte le produit à l'état de vos cheveux et on propose un soin si besoin. L'objectif est un résultat durable, pas agressif.</div></details>
+        <details><summary>Combien de temps dure une coloration ?</summary><div class="d-faq-body">Comptez environ 90 minutes pour une reprise de racines, davantage pour un changement complet.</div></details>
+        <details><summary>Proposez-vous les coiffures de mariage ?</summary><div class="d-faq-body">Oui, avec un essai préalable pour caler le rendu et la tenue le jour J.</div></details>
+        <details><summary>Comment annuler un rendez-vous ?</summary><div class="d-faq-body">Prévenez-nous au moins 24h à l'avance pour libérer le créneau.</div></details>
+        <details><summary>Où êtes-vous situés ?</summary><div class="d-faq-body">Dans le quartier de Passy (Paris 16). Adresse de démonstration.</div></details>
+      </div>
+      <p class="d-demo-note d-reveal" style="margin-top:var(--ds-6)">Concept démo créé par Studio Vela. Ce site est une maquette fictive destinée à montrer une direction possible pour ce type d'activité.</p>
     </div>
   </section>
 </main>
@@ -137,13 +185,13 @@
     <div class="d-footer-grid">
       <div>
         <a class="d-logo" href="#top"><span class="lmark">SL</span> Studio Lina</a>
-        <p class="d-footer-about">Salon de coiffure et beauté à Paris. Coupe, couleur et soins dans un cadre calme et lumineux.</p>
+        <p class="d-footer-about">Salon de coiffure et beauté à Paris 16 (Passy). Diagnostic, couleur et soins dans un cadre calme.</p>
       </div>
-      <div><h4>Soins</h4><ul><li><a href="#soins">Coiffure</a></li><li><a href="#soins">Couleur</a></li><li><a href="#soins">Soin du visage</a></li></ul></div>
-      <div><h4>Visiter</h4><ul><li>Paris (adresse fictive)</li><li>Mar–Sam</li><li>Sur rendez-vous</li></ul></div>
+      <div><h4>Soins</h4><ul><li><a href="#soins">Diagnostic</a></li><li><a href="#soins">Coloration</a></li><li><a href="#soins">Soin profond</a></li><li><a href="#soins">Coupe + brushing</a></li></ul></div>
+      <div><h4>Infos</h4><ul><li>8 avenue fictive Mozart, 75016 (démo)</li><li><a href="tel:+33179331844">01 79 33 18 44</a></li><li>Mar–Sam</li></ul></div>
     </div>
     <div class="d-studio-note">
-      <span>Ce site est un concept de démonstration conçu pour montrer une direction possible.</span>
+      <span>Informations fictives utilisées uniquement pour cette démonstration.</span>
       <a href="../index.html">Concept démo par Studio Vela — Retour au portfolio →</a>
     </div>
   </div>

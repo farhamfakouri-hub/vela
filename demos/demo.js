@@ -1,44 +1,47 @@
-// Shared demo interactions for Studio Vela demo pages
 (function () {
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  "use strict";
 
-  const navToggle = document.querySelector("[data-demo-menu-toggle]");
-  const nav = document.querySelector("[data-demo-nav]");
-  if (navToggle && nav) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("is-open");
-      navToggle.setAttribute("aria-expanded", String(isOpen));
+  // Scroll reveal
+  var reveals = document.querySelectorAll(".d-reveal");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    reveals.forEach(function (el, i) {
+      el.style.transitionDelay = (i % 3) * 0.06 + "s";
+      io.observe(el);
     });
+  }
 
-    nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
+  // Frontend-only demo forms - never send data
+  document.querySelectorAll("form[data-demo-form]").forEach(function (form) {
+    var status = form.querySelector(".d-form-status");
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (status) {
+        status.hidden = false;
+        status.textContent = "Demonstration : votre demande n'a pas ete envoyee. Sur un site reel, elle arriverait directement au professionnel.";
+        if (typeof status.focus === "function") { status.focus(); }
+        status.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    });
+  });
+
+  // Problem selector (plumber) - visual only
+  document.querySelectorAll("[data-selector]").forEach(function (group) {
+    var chips = group.querySelectorAll(".d-select-chip");
+    var output = group.querySelector(".d-select-output");
+    chips.forEach(function (chip) {
+      chip.addEventListener("click", function () {
+        chips.forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+        chip.setAttribute("aria-pressed", "true");
+        if (output) { output.textContent = chip.getAttribute("data-label") || chip.textContent; }
       });
     });
-  }
-
-  if (!prefersReducedMotion && "IntersectionObserver" in window) {
-    const revealItems = document.querySelectorAll(".demo-reveal, .reveal");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible", "in");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
-
-    revealItems.forEach((item, index) => {
-      item.style.transitionDelay = `${Math.min(index % 5, 4) * 70}ms`;
-      observer.observe(item);
-    });
-  } else {
-    document.querySelectorAll(".demo-reveal, .reveal").forEach((item) => {
-      item.classList.add("is-visible", "in");
-    });
-  }
+  });
 })();

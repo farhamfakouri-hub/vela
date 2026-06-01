@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Garage Moreau — Garage auto à Paris (concept démo Studio Vela)</title>
-<meta name="description" content="Concept de démonstration d'un site de garage automobile par Studio Vela : diagnostic, entretien, réparation, devis clair.">
+<title>Garage Moreau — Garage auto à Boulogne-Billancourt (concept démo Studio Vela)</title>
+<meta name="description" content="Concept démo Studio Vela : garage automobile à Boulogne-Billancourt. Diagnostic électronique, révision, freinage, pneus. Devis expliqué. Maquette fictive.">
 <meta name="robots" content="noindex, follow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,16 +20,23 @@
     --footer-bg: #0e1013; --footer-h: #eceef1;
   }
   body[data-demo="garage"] h1, body[data-demo="garage"] h2, body[data-demo="garage"] h3 { text-transform: uppercase; font-weight: 700; letter-spacing: 0.005em; }
-  .garage-hero { background: linear-gradient(180deg,#14161a,#1b1e24); border-bottom: 1px solid var(--line); }
+  .garage-hero { position: relative; background: linear-gradient(180deg,#14161a,#1b1e24); border-bottom: 1px solid var(--line); overflow:hidden; }
   .garage-hero::after { content: ""; position: absolute; inset: 0; opacity: 0.5; background-image: repeating-linear-gradient(135deg, rgba(240,163,36,0.05) 0 2px, transparent 2px 22px); z-index: 0; }
   .garage-hero .d-container { position: relative; z-index: 2; }
   .svc-num { color: var(--accent); font-family: var(--head-font); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.1em; }
+  .dash { background: var(--surface); border:1px solid var(--line); border-radius: var(--d-radius-lg); padding: var(--ds-5); display:grid; grid-template-columns:1fr 1fr; gap: var(--ds-3); }
+  .dash-cell { background: var(--bg); border:1px solid var(--line); border-radius: var(--d-radius); padding: var(--ds-4); }
+  .dash-cell .dc-k { font-size:0.74rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--muted); }
+  .dash-cell .dc-v { font-family: var(--head-font); font-size:1.5rem; color: var(--accent); margin-top:4px; }
+  .dash-cell .dc-s { font-size:0.8rem; color: var(--muted); }
+  .symptom { background: var(--surface); border:1px solid var(--line); border-radius: var(--d-radius); padding: var(--ds-4); display:flex; gap: var(--ds-3); align-items:flex-start; }
+  .symptom .sy-ic { width:36px;height:36px;border-radius:8px;background:rgba(240,163,36,0.15);color:var(--accent);display:grid;place-items:center;flex:none;font-weight:700; }
+  .symptom h4 { font-size:0.98rem;margin-bottom:2px; } .symptom p { font-size:0.84rem;color:var(--muted); }
 </style>
 </head>
 <body data-demo="garage" class="has-mobile-bar">
 
 <a class="d-skip" href="#main">Aller au contenu</a>
-
 <div class="demo-ribbon">Concept démo créé par Studio Vela · <a href="../index.html">Retour au portfolio</a></div>
 
 <header class="d-header">
@@ -37,8 +44,9 @@
     <a class="d-logo" href="#top"><span class="lmark">GM</span> Garage Moreau</a>
     <nav class="d-nav-links" aria-label="Navigation">
       <a href="#services">Services</a>
-      <a href="#diagnostic">Diagnostic</a>
+      <a href="#process">Diagnostic</a>
       <a href="#reparations">Réparations</a>
+      <a href="#devis">Devis</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="d-btn d-btn-primary" href="#devis">Demander un devis</a>
@@ -48,12 +56,18 @@
 <main id="main">
   <section class="d-hero garage-hero" id="top">
     <div class="d-container d-reveal">
-      <p class="d-eyebrow">Garage auto · Paris</p>
-      <h1>Diagnostic clair,<br>devis honnête.</h1>
-      <p class="d-lead">Entretien, réparation et diagnostic toutes marques. On vous explique ce qui est nécessaire, ce qui peut attendre, et combien ça coûte — avant d'intervenir.</p>
+      <p class="d-eyebrow">Garage auto · Boulogne-Billancourt</p>
+      <h1>Diagnostic clair,<br>devis expliqué.</h1>
+      <p class="d-lead">Le diagnostic est expliqué avant toute réparation. Vous savez ce qui est urgent, ce qui peut attendre, et ce qui mérite un devis.</p>
       <div class="d-hero-actions">
         <a class="d-btn d-btn-primary d-btn-lg" href="#devis">Demander un devis</a>
         <a class="d-btn d-btn-ghost d-btn-lg" href="#services">Voir les services</a>
+      </div>
+      <div class="dash d-reveal" style="margin-top:var(--ds-6);max-width:460px">
+        <div class="dash-cell"><div class="dc-k">Diagnostic</div><div class="dc-v">dès 49€</div><div class="dc-s">lecture + explication</div></div>
+        <div class="dash-cell"><div class="dc-k">Devis</div><div class="dc-v">Avant travaux</div><div class="dc-s">validé par vous</div></div>
+        <div class="dash-cell"><div class="dc-k">Marques</div><div class="dc-v">Toutes</div><div class="dc-s">essence · diesel · hybride</div></div>
+        <div class="dash-cell"><div class="dc-k">Atelier</div><div class="dc-v">Lun–Sam</div><div class="dc-s">Boulogne 92100</div></div>
       </div>
     </div>
   </section>
@@ -63,90 +77,119 @@
       <span>Toutes marques</span>
       <span>Devis avant travaux</span>
       <span>Diagnostic électronique</span>
-      <span>Pièces d'origine ou équivalentes</span>
+      <span>Boulogne-Billancourt</span>
     </div>
   </div>
 
-  <section class="d-section" id="services">
+  <!-- SYMPTOM CARDS -->
+  <section class="d-section">
     <div class="d-container">
-      <div class="d-head d-reveal">
-        <p class="d-tag">Services</p>
-        <h2>Nos prestations</h2>
-        <p>Tout pour entretenir et réparer votre véhicule, au même endroit.</p>
-      </div>
+      <div class="d-head d-reveal"><p class="d-tag">Un symptôme&nbsp;?</p><h2>Ce qui doit alerter</h2><p>Quelques signes courants à ne pas laisser traîner.</p></div>
       <div class="d-grid-3">
-        <div class="d-card d-reveal"><span class="svc-num">01</span><h3>Entretien &amp; révision</h3><p>Vidange, filtres, courroie&nbsp;: l'entretien régulier pour éviter les pannes.</p></div>
-        <div class="d-card d-reveal"><span class="svc-num">02</span><h3>Freinage</h3><p>Plaquettes, disques, purge&nbsp;: contrôle et remplacement du système de freinage.</p></div>
-        <div class="d-card d-reveal"><span class="svc-num">03</span><h3>Pneumatiques</h3><p>Montage, équilibrage et géométrie pour une tenue de route sûre.</p></div>
-        <div class="d-card d-reveal"><span class="svc-num">04</span><h3>Diagnostic électronique</h3><p>Lecture des défauts via valise pour cibler la vraie cause.</p></div>
-        <div class="d-card d-reveal"><span class="svc-num">05</span><h3>Climatisation</h3><p>Recharge, contrôle d'étanchéité et entretien du circuit.</p></div>
-        <div class="d-card d-reveal"><span class="svc-num">06</span><h3>Pré-contrôle technique</h3><p>Vérification avant le passage, pour mettre toutes les chances de votre côté.</p></div>
+        <div class="symptom d-reveal"><span class="sy-ic">!</span><div><h4>Voyant allumé</h4><p>Moteur, ABS ou batterie&nbsp;: à diagnostiquer rapidement.</p></div></div>
+        <div class="symptom d-reveal"><span class="sy-ic">~</span><div><h4>Bruit au freinage</h4><p>Grincement ou vibration&nbsp;: contrôle des plaquettes.</p></div></div>
+        <div class="symptom d-reveal"><span class="sy-ic">○</span><div><h4>Démarrage difficile</h4><p>Batterie ou circuit de charge à tester.</p></div></div>
+        <div class="symptom d-reveal"><span class="sy-ic">≈</span><div><h4>Perte de puissance</h4><p>À vérifier par lecture des codes défaut.</p></div></div>
+        <div class="symptom d-reveal"><span class="sy-ic">△</span><div><h4>Usure pneus</h4><p>Géométrie ou équilibrage à contrôler.</p></div></div>
+        <div class="symptom d-reveal"><span class="sy-ic">✓</span><div><h4>Avant contrôle technique</h4><p>Pré-contrôle visuel pour limiter les surprises.</p></div></div>
       </div>
     </div>
   </section>
 
-  <section class="d-section" id="diagnostic" style="background:var(--surface)">
+  <!-- SERVICES -->
+  <section class="d-section" id="services" style="background:var(--surface)">
     <div class="d-container">
-      <div class="d-head d-reveal">
-        <p class="d-tag">Diagnostic</p>
-        <h2>Comment on procède</h2>
-        <p>Une méthode claire, sans intervention non autorisée.</p>
+      <div class="d-head d-reveal"><p class="d-tag">Services</p><h2>Nos prestations</h2></div>
+      <div class="d-grid-3">
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Diagnostic électronique</h3><span class="d-svc-price">dès 49€</span></div><p>Lecture des codes défaut et explication de la cause.</p><p class="d-svc-for">Voyant allumé, comportement anormal.</p><div class="d-chips"><span class="d-chip d-chip-accent">Point de départ</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Révision constructeur</h3><span class="d-svc-price">sur devis</span></div><p>Entretien selon le carnet et le kilométrage.</p><p class="d-svc-for">Entretien régulier du véhicule.</p><div class="d-chips"><span class="d-chip">Selon véhicule</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Freinage</h3><span class="d-svc-price">sur devis</span></div><p>Plaquettes, disques, contrôle et purge du liquide.</p><p class="d-svc-for">Bruit, vibration, freinage moins net.</p><div class="d-chips"><span class="d-chip">Sécurité</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Batterie / démarrage</h3><span class="d-svc-price">sur devis</span></div><p>Test, remplacement et contrôle du circuit de charge.</p><p class="d-svc-for">Démarrage difficile, batterie faible.</p><div class="d-chips"><span class="d-chip">Test inclus</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Pneus</h3><span class="d-svc-price">sur devis</span></div><p>Montage, équilibrage et contrôle de pression.</p><p class="d-svc-for">Usure, crevaison, changement de saison.</p><div class="d-chips"><span class="d-chip">Montage</span></div></div>
+        <div class="d-svc-detail d-reveal"><div class="d-svc-head"><h3>Pré-contrôle technique</h3><span class="d-svc-price">sur devis</span></div><p>Vérification visuelle des points de sécurité.</p><p class="d-svc-for">Avant le passage au contrôle technique.</p><div class="d-chips"><span class="d-chip">Préventif</span></div></div>
       </div>
+      <p class="d-demo-note d-reveal" style="margin-top:var(--ds-5)"><strong>Tarifs indicatifs</strong> affichés à titre de démonstration. Le montant exact dépend du véhicule et des pièces, confirmé dans un devis avant intervention.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="d-section" id="process">
+    <div class="d-container">
+      <div class="d-head d-reveal"><p class="d-tag">Diagnostic &amp; devis</p><h2>Notre méthode</h2></div>
       <div class="d-steps">
-        <div class="d-step d-reveal"><h3>Écoute</h3><p>Vous décrivez le symptôme, on note le contexte.</p></div>
-        <div class="d-step d-reveal"><h3>Diagnostic</h3><p>Test routier et valise pour localiser la panne.</p></div>
-        <div class="d-step d-reveal"><h3>Devis</h3><p>On chiffre clairement avant d'engager les travaux.</p></div>
-        <div class="d-step d-reveal"><h3>Réparation</h3><p>On répare, on contrôle, et on vous explique.</p></div>
+        <div class="d-step d-reveal"><h3>Vous décrivez</h3><p>Le symptôme et le contexte.</p></div>
+        <div class="d-step d-reveal"><h3>Contrôle</h3><p>Essai et lecture électronique.</p></div>
+        <div class="d-step d-reveal"><h3>Diagnostic expliqué</h3><p>Ce qui est urgent, ce qui peut attendre.</p></div>
+        <div class="d-step d-reveal"><h3>Devis validé</h3><p>Vous décidez avant qu'on intervienne.</p></div>
+      </div>
+      <p style="color:var(--muted);margin-top:var(--ds-5);text-align:center">Réparation effectuée, puis véhicule rendu avec les conseils d'entretien.</p>
+    </div>
+  </section>
+
+  <!-- COMMON REPAIRS -->
+  <section class="d-section" id="reparations" style="background:var(--surface)">
+    <div class="d-container">
+      <div class="d-head d-reveal"><p class="d-tag">Réparations courantes</p><h2>Repères de prix</h2></div>
+      <div class="d-pricelist d-reveal" style="max-width:760px">
+        <div class="d-price-row"><span class="pr-name">Diagnostic électronique<span class="pr-desc">Lecture + explication</span></span><span class="pr-val">dès 49€</span></div>
+        <div class="d-price-row"><span class="pr-name">Plaquettes de frein<span class="pr-desc">Avant ou arrière, selon modèle</span></span><span class="pr-val">sur devis</span></div>
+        <div class="d-price-row"><span class="pr-name">Batterie<span class="pr-desc">Test + remplacement</span></span><span class="pr-val">sur devis</span></div>
+        <div class="d-price-row"><span class="pr-name">Train de pneus<span class="pr-desc">Montage + équilibrage</span></span><span class="pr-val">sur devis</span></div>
+        <div class="d-price-row"><span class="pr-name">Révision<span class="pr-desc">Selon carnet constructeur</span></span><span class="pr-val">sur devis</span></div>
       </div>
     </div>
   </section>
 
-  <section class="d-section" id="reparations">
+  <!-- QUOTE FORM -->
+  <section class="d-section" id="devis">
     <div class="d-container">
-      <div class="d-head d-reveal">
-        <p class="d-tag">Réparations courantes</p>
-        <h2>Ce qu'on voit souvent</h2>
-      </div>
+      <div class="d-head d-reveal"><p class="d-tag">Demande de devis</p><h2>Décrivez votre véhicule</h2></div>
       <div class="d-split">
-        <div class="d-pricelist d-reveal">
-          <div class="d-price-row"><span class="pr-name">Vidange + filtre<span class="pr-desc">Selon motorisation</span></span><span class="pr-val">dès 89€</span></div>
-          <div class="d-price-row"><span class="pr-name">Plaquettes de frein<span class="pr-desc">Avant ou arrière</span></span><span class="pr-val">dès 120€</span></div>
-          <div class="d-price-row"><span class="pr-name">Diagnostic électronique<span class="pr-desc">Lecture + analyse</span></span><span class="pr-val">dès 49€</span></div>
-          <div class="d-price-row"><span class="pr-name">Recharge climatisation<span class="pr-desc">Contrôle inclus</span></span><span class="pr-val">dès 79€</span></div>
-        </div>
-        <div class="d-card d-reveal">
-          <h3>Prix indicatifs</h3>
-          <p>Ces tarifs sont donnés à titre d'exemple pour situer un ordre de prix. Le montant exact dépend du véhicule et des pièces&nbsp;; il est confirmé dans un devis avant toute intervention.</p>
+        <form class="d-form d-reveal" data-demo-form aria-label="Demande de devis (démonstration)">
+          <div class="d-form-grid">
+            <div class="d-field"><label for="g-name">Nom</label><input id="g-name" type="text" placeholder="Votre nom"></div>
+            <div class="d-field"><label for="g-phone">Téléphone</label><input id="g-phone" type="tel" placeholder="06 ..."></div>
+            <div class="d-field"><label for="g-model">Modèle du véhicule</label><input id="g-model" type="text" placeholder="Ex : Renault Clio"></div>
+            <div class="d-field"><label for="g-year">Année</label><input id="g-year" type="number" placeholder="Ex : 2017" min="1980" max="2026"></div>
+            <div class="d-field"><label for="g-type">Type de problème</label><select id="g-type"><option>Voyant allumé</option><option>Freinage</option><option>Démarrage / batterie</option><option>Pneus</option><option>Révision</option><option>Pré-contrôle technique</option><option>Autre</option></select></div>
+            <div class="d-field"><label for="g-date">Rendez-vous souhaité</label><input id="g-date" type="date"></div>
+            <div class="d-field d-col-2"><label for="g-msg">Détails</label><textarea id="g-msg" placeholder="Depuis quand, dans quelles conditions..."></textarea></div>
+          </div>
+          <p class="d-form-note">Formulaire de démonstration — aucune donnée n'est envoyée.</p>
+          <button class="d-btn d-btn-primary d-btn-lg" type="submit" style="width:100%">Demander un devis</button>
+          <p class="d-form-status" role="status" tabindex="-1" hidden></p>
+        </form>
+        <div class="d-reveal" style="display:flex;flex-direction:column;gap:var(--ds-4)">
+          <div class="d-info-card">
+            <h3>Horaires</h3>
+            <div class="d-info-row"><span class="d-info-k">Lun–Ven</span><span class="d-info-v">8h – 18h30</span></div>
+            <div class="d-info-row"><span class="d-info-k">Samedi</span><span class="d-info-v">9h – 13h</span></div>
+            <div class="d-info-row"><span class="d-info-k">Dimanche</span><span class="d-info-v">Fermé</span></div>
+          </div>
+          <div class="d-info-card">
+            <h3>L'atelier</h3>
+            <div class="d-info-row"><span class="d-info-k">Adresse</span><span class="d-info-v">14 avenue fictive Victor-Hugo, 92100 Boulogne-Billancourt <em>(démo)</em></span></div>
+            <div class="d-info-row"><span class="d-info-k">Tél</span><span class="d-info-v"><a href="tel:+33186557214">01 86 55 72 14</a></span></div>
+            <div class="d-info-row"><span class="d-info-k">Email</span><span class="d-info-v"><a href="mailto:atelier@garagemoreau-demo.fr">atelier@garagemoreau-demo.fr</a></span></div>
+          </div>
         </div>
       </div>
-      <p class="d-disclaimer d-reveal">Concept démo&nbsp;: tarifs illustratifs, sans engagement.</p>
     </div>
   </section>
 
-  <section class="d-section" id="devis" style="background:var(--surface)">
-    <div class="d-container d-split">
-      <div class="d-reveal">
-        <p class="d-tag">Devis</p>
-        <h2 style="font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:var(--ds-4)">Un doute sur votre véhicule&nbsp;?</h2>
-        <p style="color:var(--muted)">Décrivez-nous le problème ou le besoin d'entretien. On vous rappelle pour fixer un rendez-vous et établir un devis clair.</p>
-      </div>
-      <div class="d-card d-reveal" style="text-align:center">
-        <h3 style="margin-bottom:var(--ds-3)">Demander un devis</h3>
-        <p style="margin-bottom:var(--ds-5)">Gratuit et sans engagement.</p>
-        <a class="d-btn d-btn-primary d-btn-lg" href="#top" style="width:100%;margin-bottom:var(--ds-3)">Demander un devis</a>
-        <a class="d-btn d-btn-ghost" href="tel:+33100000000" style="width:100%">Appeler le garage</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="d-section" id="faq">
+  <!-- FAQ -->
+  <section class="d-section" id="faq" style="background:var(--surface)">
     <div class="d-container">
-      <div class="d-head d-reveal"><p class="d-tag">FAQ</p><h2>Vos questions</h2></div>
+      <div class="d-head d-reveal"><p class="d-tag">Garage à Boulogne-Billancourt</p><h2>Questions fréquentes</h2><p>Garage automobile à Boulogne-Billancourt (Paris Ouest) pour diagnostic, entretien et réparation toutes marques.</p></div>
       <div class="d-faq d-reveal">
-        <details open><summary>Travaillez-vous toutes les marques ?</summary><div class="d-faq-body">Oui, on intervient sur la plupart des marques, essence, diesel et hybrides.</div></details>
+        <details open><summary>Donnez-vous un devis avant de réparer ?</summary><div class="d-faq-body">Toujours. Le diagnostic est expliqué, puis vous validez le devis avant toute intervention.</div></details>
         <details><summary>Le diagnostic est-il déduit de la réparation ?</summary><div class="d-faq-body">Selon les cas&nbsp;: on vous le précise clairement dans le devis avant de commencer.</div></details>
-        <details><summary>Faut-il prendre rendez-vous ?</summary><div class="d-faq-body">C'est préférable pour réduire l'attente. Pour une urgence, appelez-nous directement.</div></details>
+        <details><summary>Travaillez-vous toutes les marques ?</summary><div class="d-faq-body">Oui, la plupart des marques essence, diesel et hybrides.</div></details>
+        <details><summary>Faut-il prendre rendez-vous ?</summary><div class="d-faq-body">C'est préférable pour réduire l'attente. Indiquez votre disponibilité dans le formulaire.</div></details>
+        <details><summary>Combien de temps pour un diagnostic ?</summary><div class="d-faq-body">Le diagnostic électronique est généralement rapide&nbsp;; le délai de réparation dépend des pièces, indiqué dans le devis.</div></details>
+        <details><summary>Où êtes-vous situés ?</summary><div class="d-faq-body">À Boulogne-Billancourt (92100), Paris Ouest. Adresse de démonstration.</div></details>
       </div>
+      <p class="d-demo-note d-reveal" style="margin-top:var(--ds-6)">Concept démo créé par Studio Vela. Ce site est une maquette fictive destinée à montrer une direction possible pour ce type d'activité.</p>
     </div>
   </section>
 </main>
@@ -156,13 +199,13 @@
     <div class="d-footer-grid">
       <div>
         <a class="d-logo" href="#top"><span class="lmark">GM</span> Garage Moreau</a>
-        <p class="d-footer-about">Garage automobile à Paris. Entretien, réparation et diagnostic toutes marques, devis clair avant travaux.</p>
+        <p class="d-footer-about">Garage automobile à Boulogne-Billancourt. Diagnostic électronique, entretien et réparation toutes marques, devis expliqué.</p>
       </div>
-      <div><h4>Services</h4><ul><li><a href="#services">Entretien</a></li><li><a href="#services">Freinage</a></li><li><a href="#diagnostic">Diagnostic</a></li></ul></div>
-      <div><h4>Contact</h4><ul><li><a href="tel:+33100000000">Téléphone (démo)</a></li><li>Paris (adresse fictive)</li><li>Lun–Sam</li></ul></div>
+      <div><h4>Services</h4><ul><li><a href="#services">Diagnostic</a></li><li><a href="#services">Freinage</a></li><li><a href="#services">Pneus</a></li><li><a href="#services">Révision</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li>14 av. fictive Victor-Hugo, 92100 (démo)</li><li><a href="tel:+33186557214">01 86 55 72 14</a></li><li>Lun–Sam</li></ul></div>
     </div>
     <div class="d-studio-note">
-      <span>Ce site est un concept de démonstration conçu pour montrer une direction possible.</span>
+      <span>Informations fictives utilisées uniquement pour cette démonstration.</span>
       <a href="../index.html">Concept démo par Studio Vela — Retour au portfolio →</a>
     </div>
   </div>
