@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trattoria Nonna — Restaurant italien à Paris (concept démo Studio Vela)</title>
+<meta name="description" content="Concept de démonstration d'un site de restaurant par Studio Vela : menu, plats signatures, réservation, horaires.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../demo-styles.css">
+<style>
+  body[data-demo="resto"] {
+    --bg: #fbf3e9; --surface: #fff9f1; --text: #3a1410; --muted: #8a5a4a;
+    --accent: #c0492b; --accent-ink: #fff6ee; --line: rgba(58,20,16,0.12);
+    --bg-blur: rgba(251,243,233,0.88);
+    --body-font: "DM Sans", sans-serif; --head-font: "DM Serif Display", serif;
+    --strip-bg: #5e6b3a; --strip-text: #f7f4e8;
+    --footer-bg: #3a1410; --footer-h: #fbf3e9;
+  }
+  body[data-demo="resto"] h1, body[data-demo="resto"] h2, body[data-demo="resto"] h3 { font-weight: 400; letter-spacing: 0; }
+  .resto-hero { background: radial-gradient(110% 90% at 80% -10%, rgba(192,73,43,0.16), transparent 55%); }
+  .dish-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--d-radius-lg); overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+  .dish-card:hover { transform: translateY(-5px); box-shadow: 0 24px 50px -30px rgba(58,20,16,0.4); }
+  .dish-top { height: 130px; display: grid; place-items: center; color: rgba(255,255,255,0.85); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.06em; }
+  .dish-body { padding: var(--ds-5); }
+  .dish-body h3 { font-size: 1.3rem; margin-bottom: var(--ds-1); }
+  .dish-body p { color: var(--muted); font-size: 0.92rem; }
+  .dish-price { color: var(--accent); font-weight: 700; font-family: var(--body-font); margin-top: var(--ds-3); display: block; }
+</style>
+</head>
+<body data-demo="resto">
+
+<a class="d-skip" href="#main">Aller au contenu</a>
+
+<div class="demo-ribbon">Concept démo créé par Studio Vela · <a href="../index.html">Retour au portfolio</a></div>
+
+<header class="d-header">
+  <div class="d-container d-nav">
+    <a class="d-logo" href="#top"><span class="lmark">TN</span> Trattoria Nonna</a>
+    <nav class="d-nav-links" aria-label="Navigation">
+      <a href="#menu">Menu</a>
+      <a href="#signatures">Spécialités</a>
+      <a href="#ambiance">Ambiance</a>
+      <a href="#horaires">Horaires</a>
+    </nav>
+    <a class="d-btn d-btn-primary" href="#reservation">Réserver une table</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="d-hero resto-hero" id="top">
+    <div class="d-container d-reveal">
+      <p class="d-eyebrow">Cuisine italienne · Paris</p>
+      <h1>La cuisine de la Nonna,<br>à Paris.</h1>
+      <p class="d-lead">Pâtes fraîches du jour, sauces mijotées longtemps et produits choisis. Une table chaleureuse où l'on revient pour l'ambiance autant que pour l'assiette.</p>
+      <div class="d-hero-actions">
+        <a class="d-btn d-btn-primary d-btn-lg" href="#reservation">Réserver une table</a>
+        <a class="d-btn d-btn-ghost d-btn-lg" href="#menu">Voir le menu</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="d-strip">
+    <div class="d-strip-inner">
+      <span>Pâtes fraîches maison</span>
+      <span>Produits de saison</span>
+      <span>Midi &amp; soir</span>
+      <span>Réservation conseillée</span>
+    </div>
+  </div>
+
+  <section class="d-section" id="menu">
+    <div class="d-container">
+      <div class="d-head d-reveal">
+        <p class="d-tag">Le menu</p>
+        <h2>Un aperçu de la carte</h2>
+        <p>La carte change avec les saisons. Voici quelques incontournables.</p>
+      </div>
+      <div class="d-split">
+        <div class="d-pricelist d-reveal">
+          <div class="d-price-row"><span class="pr-name">Burrata des Pouilles<span class="pr-desc">Tomates anciennes, basilic, huile d'olive</span></span><span class="pr-val">12€</span></div>
+          <div class="d-price-row"><span class="pr-name">Tagliatelles al ragù<span class="pr-desc">Sauce mijotée 6 heures</span></span><span class="pr-val">17€</span></div>
+          <div class="d-price-row"><span class="pr-name">Risotto aux cèpes<span class="pr-desc">Parmesan affiné 24 mois</span></span><span class="pr-val">19€</span></div>
+          <div class="d-price-row"><span class="pr-name">Tiramisù maison<span class="pr-desc">Recette de la maison</span></span><span class="pr-val">8€</span></div>
+        </div>
+        <div class="d-card d-reveal">
+          <h3>Le menu du midi</h3>
+          <p style="margin-bottom:var(--ds-4)">Entrée + plat ou plat + dessert, avec un choix qui change chaque semaine selon le marché.</p>
+          <p style="color:var(--accent);font-weight:700;font-size:1.4rem;font-family:var(--body-font)">22€ <span style="font-size:0.9rem;color:var(--muted);font-weight:500">/ formule midi</span></p>
+        </div>
+      </div>
+      <p class="d-disclaimer d-reveal">Concept démo&nbsp;: plats et prix donnés à titre d'exemple pour illustrer la mise en page d'une vraie carte.</p>
+    </div>
+  </section>
+
+  <section class="d-section" id="signatures" style="background:var(--surface)">
+    <div class="d-container">
+      <div class="d-head d-reveal">
+        <p class="d-tag">Spécialités</p>
+        <h2>Les plats signatures</h2>
+      </div>
+      <div class="d-grid-3">
+        <article class="dish-card d-reveal"><div class="dish-top" style="background:linear-gradient(135deg,#c0492b,#9c3620)">Plat signature</div><div class="dish-body"><h3>Lasagne della Nonna</h3><p>La recette familiale, montée à la main, gratinée au four.</p><span class="dish-price">18€</span></div></article>
+        <article class="dish-card d-reveal"><div class="dish-top" style="background:linear-gradient(135deg,#5e6b3a,#46522b)">Plat signature</div><div class="dish-body"><h3>Gnocchi al pesto</h3><p>Gnocchi maison, pesto de basilic frais, pignons torréfiés.</p><span class="dish-price">16€</span></div></article>
+        <article class="dish-card d-reveal"><div class="dish-top" style="background:linear-gradient(135deg,#a8662f,#854f23)">Plat signature</div><div class="dish-body"><h3>Osso buco</h3><p>Mijoté longuement, servi avec sa polenta crémeuse.</p><span class="dish-price">23€</span></div></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="ambiance">
+    <div class="d-container d-split">
+      <div class="d-reveal">
+        <p class="d-tag">L'ambiance</p>
+        <h2 style="font-size:clamp(1.9rem,4.5vw,2.8rem);margin-bottom:var(--ds-4)">Comme à la maison, en Italie</h2>
+        <p style="color:var(--muted);font-size:1.05rem">Nappes simples, lumière douce, et le bruit des conversations. On a voulu une salle où l'on se sent invité, pas servi. Idéale pour un dîner en famille, un repas entre amis ou un déjeuner qui prend son temps.</p>
+      </div>
+      <div class="d-gallery d-reveal" style="grid-template-columns:1fr 1fr">
+        <div class="d-tile" style="background:#7a3322"><span>Salle</span></div>
+        <div class="d-tile" style="background:#5e6b3a"><span>Cuisine</span></div>
+        <div class="d-tile" style="background:#a8662f"><span>Pâtes fraîches</span></div>
+        <div class="d-tile" style="background:#8a3a26"><span>Terrasse</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="horaires" style="background:var(--surface)">
+    <div class="d-container d-split">
+      <div class="d-reveal">
+        <p class="d-tag">Horaires</p>
+        <h2 style="font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:var(--ds-4)">Quand venir</h2>
+        <div class="d-hours">
+          <div><span>Mardi – Vendredi</span><span>12h–14h30 · 19h–22h30</span></div>
+          <div><span>Samedi</span><span>19h – 23h</span></div>
+          <div><span>Dimanche midi</span><span>12h – 15h</span></div>
+          <div><span>Lundi</span><span>Fermé</span></div>
+        </div>
+        <p style="color:var(--muted);font-size:0.9rem;margin-top:var(--ds-3)">Horaires de démonstration.</p>
+      </div>
+      <div class="d-card d-reveal" id="reservation" style="text-align:center">
+        <h3 style="margin-bottom:var(--ds-3)">Réserver une table</h3>
+        <p style="margin-bottom:var(--ds-5)">Réservez en ligne ou appelez-nous. On vous garde la meilleure table.</p>
+        <a class="d-btn d-btn-primary d-btn-lg" href="#top" style="width:100%">Réserver une table</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="d-footer">
+  <div class="d-container">
+    <div class="d-footer-grid">
+      <div>
+        <a class="d-logo" href="#top"><span class="lmark">TN</span> Trattoria Nonna</a>
+        <p class="d-footer-about">Restaurant italien à Paris. Pâtes fraîches maison, produits de saison, ambiance familiale.</p>
+      </div>
+      <div><h4>La carte</h4><ul><li><a href="#menu">Menu</a></li><li><a href="#signatures">Spécialités</a></li><li><a href="#horaires">Horaires</a></li></ul></div>
+      <div><h4>Venir</h4><ul><li>Paris (adresse fictive)</li><li>Mar–Dim</li><li>Réservation conseillée</li></ul></div>
+    </div>
+    <div class="d-studio-note">
+      <span>Ce site est un concept de démonstration conçu pour montrer une direction possible.</span>
+      <a href="../index.html">Concept démo par Studio Vela — Retour au portfolio →</a>
+    </div>
+  </div>
+</footer>
+
+<script src="demo.js" defer></script>
+</body>
+</html>

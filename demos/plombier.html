@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berger Plomberie — Plombier à Paris (concept démo Studio Vela)</title>
+<meta name="description" content="Concept de démonstration d'un site de plombier par Studio Vela : dépannage, fuite, chauffe-eau, devis clair.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../demo-styles.css">
+<style>
+  body[data-demo="plumber"] {
+    --bg: #f4f7fa; --surface: #ffffff; --text: #0e2236; --muted: #5a6b7d;
+    --accent: #1f6fd6; --accent-ink: #ffffff; --line: rgba(14,34,54,0.1);
+    --bg-blur: rgba(244,247,250,0.9);
+    --body-font: "Barlow", sans-serif; --head-font: "Barlow", sans-serif;
+    --strip-bg: #0e2236; --strip-text: #f4f7fa;
+    --footer-bg: #0e2236; --footer-h: #ffffff;
+  }
+  body[data-demo="plumber"] h1, body[data-demo="plumber"] h2 { font-weight: 800; letter-spacing: -0.02em; }
+  .plumb-hero { background: linear-gradient(180deg, #0e2236 0%, #14304a 100%); color: #eaf2fb; padding-bottom: var(--ds-8); }
+  .plumb-hero .d-eyebrow { color: #6fb0ec; }
+  .plumb-hero .d-lead { color: rgba(234,242,251,0.8); }
+  .plumb-urgent { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 8px 16px; border-radius: var(--d-pill); font-weight: 600; font-size: 0.88rem; margin-bottom: var(--ds-4); }
+  .plumb-dot { width: 9px; height: 9px; border-radius: 50%; background: #ff5a4d; box-shadow: 0 0 0 4px rgba(255,90,77,0.3); }
+  .plumb-hero .d-btn-ghost { color: #eaf2fb; }
+  .plumb-hero .d-btn-ghost:hover { background: #eaf2fb; color: #0e2236; }
+</style>
+</head>
+<body data-demo="plumber" class="has-mobile-bar">
+
+<a class="d-skip" href="#main">Aller au contenu</a>
+
+<div class="demo-ribbon">Concept démo créé par Studio Vela · <a href="../index.html">Retour au portfolio</a></div>
+
+<header class="d-header">
+  <div class="d-container d-nav">
+    <a class="d-logo" href="#top"><span class="lmark">BP</span> Berger Plomberie</a>
+    <nav class="d-nav-links" aria-label="Navigation">
+      <a href="#services">Services</a>
+      <a href="#devis">Devis</a>
+      <a href="#zones">Zones</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="d-btn d-btn-primary" href="tel:+33100000000">Appeler maintenant</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="d-hero plumb-hero" id="top">
+    <div class="d-container d-reveal">
+      <span class="plumb-urgent"><span class="plumb-dot" aria-hidden="true"></span> Dépannage 7j/7</span>
+      <h1>Une fuite ?<br>On vous répond vite.</h1>
+      <p class="d-lead">Fuite, canalisation bouchée, chauffe-eau en panne&nbsp;? On intervient à Paris avec un devis clair annoncé avant les travaux.</p>
+      <div class="d-hero-actions">
+        <a class="d-btn d-btn-primary d-btn-lg" href="tel:+33100000000">Appeler maintenant</a>
+        <a class="d-btn d-btn-ghost d-btn-lg" href="#devis">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="d-strip">
+    <div class="d-strip-inner">
+      <span>Devis clair avant travaux</span>
+      <span>Déplacement &amp; diagnostic</span>
+      <span>Paris &amp; proche banlieue</span>
+      <span>Travail garanti</span>
+    </div>
+  </div>
+
+  <section class="d-section" id="services">
+    <div class="d-container">
+      <div class="d-head d-reveal">
+        <p class="d-tag">Services</p>
+        <h2>Ce qu'on répare</h2>
+        <p>Du petit dépannage à l'installation, un seul interlocuteur.</p>
+      </div>
+      <div class="d-grid-3">
+        <div class="d-card d-reveal"><h3>Fuite &amp; dégât des eaux</h3><p>Recherche et réparation de fuite, intervention rapide pour limiter les dégâts.</p></div>
+        <div class="d-card d-reveal"><h3>Canalisation bouchée</h3><p>Débouchage évier, douche, WC et colonnes, avec matériel adapté.</p></div>
+        <div class="d-card d-reveal"><h3>Chauffe-eau &amp; chaudière</h3><p>Dépannage, entretien et remplacement de votre production d'eau chaude.</p></div>
+        <div class="d-card d-reveal"><h3>Robinetterie &amp; sanitaire</h3><p>Pose et remplacement de robinets, WC, lavabos et douches.</p></div>
+        <div class="d-card d-reveal"><h3>Installation</h3><p>Mise en place et raccordement de vos équipements, dans les règles.</p></div>
+        <div class="d-card d-reveal"><h3>Recherche de fuite</h3><p>Détection sans casse, pour localiser le problème avant d'intervenir.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="devis" style="background:var(--surface)">
+    <div class="d-container">
+      <div class="d-head d-reveal">
+        <p class="d-tag">Devis &amp; déroulé</p>
+        <h2>Comment ça se passe</h2>
+        <p>Pas de mauvaise surprise&nbsp;: le prix est annoncé avant qu'on commence.</p>
+      </div>
+      <div class="d-steps">
+        <div class="d-step d-reveal"><h3>Vous appelez</h3><p>Vous décrivez le problème, on évalue l'urgence.</p></div>
+        <div class="d-step d-reveal"><h3>Diagnostic</h3><p>On identifie la panne sur place.</p></div>
+        <div class="d-step d-reveal"><h3>Devis clair</h3><p>Vous validez le prix avant tout travaux.</p></div>
+        <div class="d-step d-reveal"><h3>Réparation</h3><p>On répare, on nettoie, on vous explique.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="zones">
+    <div class="d-container d-split">
+      <div class="d-reveal">
+        <p class="d-tag">Zones d'intervention</p>
+        <h2 style="font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:var(--ds-4)">Paris &amp; proche banlieue</h2>
+        <p style="color:var(--muted);margin-bottom:var(--ds-4)">On intervient rapidement dans Paris et les communes limitrophes.</p>
+        <div class="d-tags">
+          <span class="d-tagchip">Paris 8e</span><span class="d-tagchip">Paris 9e</span><span class="d-tagchip">Paris 17e</span>
+          <span class="d-tagchip">Paris 16e</span><span class="d-tagchip">Neuilly</span><span class="d-tagchip">Levallois</span><span class="d-tagchip">Clichy</span>
+        </div>
+      </div>
+      <div class="d-card d-reveal" style="text-align:center">
+        <h3>Besoin d'une intervention ?</h3>
+        <p style="margin:var(--ds-3) 0 var(--ds-5)">Appelez directement ou demandez un devis gratuit.</p>
+        <a class="d-btn d-btn-primary d-btn-lg" href="tel:+33100000000" style="width:100%;margin-bottom:var(--ds-3)">Appeler maintenant</a>
+        <a class="d-btn d-btn-ghost" href="#top" style="width:100%">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="faq" style="background:var(--surface)">
+    <div class="d-container">
+      <div class="d-head d-reveal"><p class="d-tag">FAQ</p><h2>Vos questions</h2></div>
+      <div class="d-faq d-reveal">
+        <details open><summary>Le déplacement est-il payant ?</summary><div class="d-faq-body">Le déplacement et le diagnostic vous sont indiqués clairement avant l'intervention, dans le devis.</div></details>
+        <details><summary>Intervenez-vous le week-end ?</summary><div class="d-faq-body">Oui, pour les dépannages, selon les disponibilités du jour.</div></details>
+        <details><summary>Donnez-vous un prix à l'avance ?</summary><div class="d-faq-body">Toujours. Vous validez le devis avant que les travaux commencent.</div></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="d-footer">
+  <div class="d-container">
+    <div class="d-footer-grid">
+      <div>
+        <a class="d-logo" href="#top"><span class="lmark">BP</span> Berger Plomberie</a>
+        <p class="d-footer-about">Plombier à Paris et proche banlieue. Dépannage, installation et devis clair avant travaux.</p>
+      </div>
+      <div><h4>Services</h4><ul><li><a href="#services">Fuites</a></li><li><a href="#services">Débouchage</a></li><li><a href="#services">Chauffe-eau</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+33100000000">Téléphone (démo)</a></li><li>Paris (zone fictive)</li><li>7j/7 dépannage</li></ul></div>
+    </div>
+    <div class="d-studio-note">
+      <span>Ce site est un concept de démonstration conçu pour montrer une direction possible.</span>
+      <a href="../index.html">Concept démo par Studio Vela — Retour au portfolio →</a>
+    </div>
+  </div>
+</footer>
+
+<div class="d-mobile-bar">
+  <a class="d-mbar-secondary" href="#devis">Devis</a>
+  <a class="d-mbar-primary" href="tel:+33100000000">Appeler maintenant</a>
+</div>
+
+<script src="demo.js" defer></script>
+</body>
+</html>

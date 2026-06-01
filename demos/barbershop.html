@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maison Figaro — Barbier à Paris (concept démo Studio Vela)</title>
+<meta name="description" content="Concept de démonstration d'un site de barbier par Studio Vela : coupe, barbe, rasage traditionnel, réservation en ligne.">
+<meta name="robots" content="noindex, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../demo-styles.css">
+<style>
+  body[data-demo="barber"] {
+    --bg: #121110; --surface: #1c1a18; --text: #f1e9dd; --muted: #a79b8a;
+    --accent: #c9a25e; --accent-ink: #1a1410; --line: rgba(241,233,221,0.12);
+    --bg-blur: rgba(18,17,16,0.85);
+    --body-font: "Inter", sans-serif; --head-font: "Oswald", sans-serif;
+    --strip-bg: #c9a25e; --strip-text: #1a1410;
+    --footer-bg: #0c0b0a; --footer-h: #f1e9dd;
+  }
+  body[data-demo="barber"] h1, body[data-demo="barber"] h2, body[data-demo="barber"] h3 { text-transform: uppercase; letter-spacing: 0.01em; }
+  .barber-hero { background: radial-gradient(120% 100% at 80% -10%, rgba(201,162,94,0.16), transparent 55%); }
+</style>
+</head>
+<body data-demo="barber" class="has-mobile-bar">
+
+<a class="d-skip" href="#main">Aller au contenu</a>
+
+<div class="demo-ribbon">Concept démo créé par Studio Vela · <a href="../index.html">Retour au portfolio</a></div>
+
+<header class="d-header">
+  <div class="d-container d-nav">
+    <a class="d-logo" href="#top"><span class="lmark">MF</span> Maison Figaro</a>
+    <nav class="d-nav-links" aria-label="Navigation">
+      <a href="#prestations">Prestations</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#process">Réservation</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="d-btn d-btn-primary" href="#process">Réserver une place</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="d-hero barber-hero" id="top">
+    <div class="d-container d-reveal">
+      <p class="d-eyebrow">Barbier · Paris</p>
+      <h1>L'art du rasage,<br>à l'ancienne.</h1>
+      <p class="d-lead">Coupe nette, barbe taillée au rasoir, serviette chaude. Le geste classique du barbier, dans un cadre qui prend son temps.</p>
+      <div class="d-hero-actions">
+        <a class="d-btn d-btn-primary d-btn-lg" href="#process">Réserver une place</a>
+        <a class="d-btn d-btn-ghost d-btn-lg" href="#prestations">Voir les prestations</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="d-strip">
+    <div class="d-strip-inner">
+      <span>Coupe &amp; barbe</span>
+      <span>Rasage traditionnel</span>
+      <span>Sans rendez-vous possible</span>
+      <span>Produits de soin homme</span>
+    </div>
+  </div>
+
+  <section class="d-section" id="prestations">
+    <div class="d-container">
+      <div class="d-head d-reveal">
+        <p class="d-tag">Prestations</p>
+        <h2>Nos prestations &amp; tarifs</h2>
+        <p>Des prix simples, affichés clairement. Pas de surprise au comptoir.</p>
+      </div>
+      <div class="d-split">
+        <div class="d-pricelist d-reveal">
+          <div class="d-price-row"><span class="pr-name">Coupe homme<span class="pr-desc">Shampoing, coupe, coiffage</span></span><span class="pr-val">28€</span></div>
+          <div class="d-price-row"><span class="pr-name">Coupe + barbe<span class="pr-desc">La formule complète</span></span><span class="pr-val">40€</span></div>
+          <div class="d-price-row"><span class="pr-name">Taille de barbe<span class="pr-desc">Contours au rasoir</span></span><span class="pr-val">20€</span></div>
+          <div class="d-price-row"><span class="pr-name">Rasage traditionnel<span class="pr-desc">Serviette chaude, blaireau</span></span><span class="pr-val">25€</span></div>
+          <div class="d-price-row"><span class="pr-name">Coupe enfant<span class="pr-desc">Moins de 12 ans</span></span><span class="pr-val">18€</span></div>
+        </div>
+        <div class="d-card d-reveal">
+          <h3>Le rituel Maison Figaro</h3>
+          <p>Chaque passage commence par un café et une vraie discussion sur ce que vous voulez. On travaille à la tondeuse, aux ciseaux et au rasoir, avec une finition à la serviette chaude. Vous repartez net, sans avoir eu l'impression d'être pressé.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="galerie" style="background:var(--surface)">
+    <div class="d-container">
+      <div class="d-head d-reveal">
+        <p class="d-tag">Galerie</p>
+        <h2>Le style de la maison</h2>
+        <p>Un aperçu des coupes et finitions. (Emplacements photos de démonstration.)</p>
+      </div>
+      <div class="d-gallery d-reveal">
+        <div class="d-tile" style="background:#2a2520"><span>Dégradé net</span><span style="position:absolute" aria-hidden="true"></span></div>
+        <div class="d-tile" style="background:#34291c"><span>Barbe sculptée</span></div>
+        <div class="d-tile" style="background:#221d18"><span>Coupe classique</span></div>
+        <div class="d-tile" style="background:#30281d"><span>Rasage net</span></div>
+        <div class="d-tile" style="background:#241f1a"><span>Contours</span></div>
+        <div class="d-tile" style="background:#2c2419"><span>Coiffage</span></div>
+      </div>
+      <p class="d-disclaimer d-reveal">Concept démo&nbsp;: ces vignettes représentent des emplacements pour de vraies photos de salon. Aucune image n'est un client réel.</p>
+    </div>
+  </section>
+
+  <section class="d-section" id="process">
+    <div class="d-container">
+      <div class="d-head d-reveal">
+        <p class="d-tag">Réservation</p>
+        <h2>Réserver en 3 étapes</h2>
+      </div>
+      <div class="d-steps">
+        <div class="d-step d-reveal"><h3>Choisissez</h3><p>Coupe, barbe ou rasage&nbsp;: vous sélectionnez votre prestation.</p></div>
+        <div class="d-step d-reveal"><h3>Un créneau</h3><p>Vous prenez l'horaire qui vous arrange, ou vous passez directement.</p></div>
+        <div class="d-step d-reveal"><h3>On s'occupe de vous</h3><p>Café, discussion, et le travail commence.</p></div>
+      </div>
+      <div class="d-split" style="margin-top:var(--ds-7)">
+        <div class="d-reveal">
+          <h3 style="font-size:1.3rem;margin-bottom:var(--ds-4)">Horaires</h3>
+          <div class="d-hours">
+            <div><span>Mardi – Vendredi</span><span>10h – 20h</span></div>
+            <div><span>Samedi</span><span>9h – 19h</span></div>
+            <div><span>Dimanche – Lundi</span><span>Fermé</span></div>
+          </div>
+          <p style="color:var(--muted);font-size:0.9rem;margin-top:var(--ds-3)">Horaires de démonstration.</p>
+        </div>
+        <div class="d-card d-reveal">
+          <h3>Prêt pour une coupe ?</h3>
+          <p style="margin-bottom:var(--ds-5)">Réservez votre place en quelques secondes ou passez nous voir.</p>
+          <a class="d-btn d-btn-primary d-btn-lg" href="#top" style="width:100%">Réserver une place</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="faq" style="background:var(--surface)">
+    <div class="d-container">
+      <div class="d-head d-reveal"><p class="d-tag">FAQ</p><h2>Bon à savoir</h2></div>
+      <div class="d-faq d-reveal">
+        <details open><summary>Faut-il réserver ?</summary><div class="d-faq-body">La réservation est conseillée aux heures de pointe, mais on accepte aussi le sans-rendez-vous selon l'affluence.</div></details>
+        <details><summary>Vous coupez les enfants ?</summary><div class="d-faq-body">Oui, coupe enfant pour les moins de 12 ans à tarif réduit.</div></details>
+        <details><summary>Quels moyens de paiement ?</summary><div class="d-faq-body">Carte et espèces acceptées sur place.</div></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="d-footer">
+  <div class="d-container">
+    <div class="d-footer-grid">
+      <div>
+        <a class="d-logo" href="#top"><span class="lmark">MF</span> Maison Figaro</a>
+        <p class="d-footer-about">Barbier traditionnel à Paris. Coupe, barbe et rasage, dans un cadre qui prend son temps.</p>
+      </div>
+      <div><h4>Prestations</h4><ul><li><a href="#prestations">Coupe homme</a></li><li><a href="#prestations">Barbe</a></li><li><a href="#prestations">Rasage</a></li></ul></div>
+      <div><h4>Visiter</h4><ul><li>Paris (adresse fictive)</li><li>Mar–Sam</li><li>Réservation en ligne</li></ul></div>
+    </div>
+    <div class="d-studio-note">
+      <span>Ce site est un concept de démonstration conçu pour montrer une direction possible.</span>
+      <a href="../index.html">Concept démo par Studio Vela — Retour au portfolio →</a>
+    </div>
+  </div>
+</footer>
+
+<div class="d-mobile-bar">
+  <a class="d-mbar-secondary" href="#prestations">Prestations</a>
+  <a class="d-mbar-primary" href="#process">Réserver une place</a>
+</div>
+
+<script src="demo.js" defer></script>
+</body>
+</html>
