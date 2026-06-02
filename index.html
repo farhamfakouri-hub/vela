@@ -3,53 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Studio Vela — Création de sites web pour artisans &amp; commerces à Paris</title>
-<meta name="description" content="Studio Vela conçoit des sites vitrines modernes et sur-mesure pour artisans, commerces et services locaux à Paris. Design propre, mobile, pensé pour vous apporter des contacts. Maquette gratuite sur demande.">
+<title>Studio Vela — Studio de création web pour artisans &amp; commerces · Paris</title>
+<meta name="description" content="Studio Vela conçoit des sites web sur-mesure, rapides et pensés mobile pour les artisans et commerces de Paris. Démos interactives, devis clair, maquette gratuite.">
 <link rel="canonical" href="https://studiovela.fr/">
-
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Studio Vela — Sites web modernes pour commerces locaux à Paris">
-<meta property="og:description" content="Sites vitrines sur-mesure pour artisans et commerces à Paris. Design premium, mobile-first, conçu pour convertir vos visiteurs en clients.">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:title" content="Studio Vela — Studio de création web · Paris">
+<meta property="og:description" content="Sites web sur-mesure, immersifs et pensés pour convertir. Démos interactives par métier, devis clair, maquette gratuite.">
 <meta property="og:url" content="https://studiovela.fr/">
 <meta property="og:image" content="https://studiovela.fr/assets/images/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<a class="skip-link" href="#main">Aller au contenu</a>
+<a class="skip-link" href="#main" data-fr>Aller au contenu</a><a class="skip-link" href="#main" data-en>Skip to content</a>
 
 <header class="site-header" id="top">
   <div class="container nav">
-    <a class="logo" href="#top" aria-label="Studio Vela, accueil">
-      <span class="logo-dot" aria-hidden="true"></span>Studio&nbsp;Vela
-    </a>
-    <nav class="nav-links" aria-label="Navigation principale">
-      <a href="#realisations">Réalisations</a>
-      <a href="#services">Services</a>
-      <a href="#packs">Packs</a>
-      <a href="#process">Process</a>
-      <a href="#contact">Contact</a>
+    <a class="logo" href="#top" aria-label="Studio Vela"><span class="logo-mark" aria-hidden="true"></span>Studio&nbsp;Vela</a>
+    <nav class="nav-links" aria-label="Navigation">
+      <a href="#expertise"><span data-fr>Expertise</span><span data-en>Expertise</span></a>
+      <a href="#realisations"><span data-fr>Démos</span><span data-en>Demos</span></a>
+      <a href="#packs"><span data-fr>Tarifs</span><span data-en>Pricing</span></a>
+      <a href="#process"><span data-fr>Méthode</span><span data-en>Process</span></a>
+      <a href="#contact"><span data-fr>Contact</span><span data-en>Contact</span></a>
     </nav>
-    <a class="btn btn-primary nav-cta" href="https://wa.me/33603440050" target="_blank" rel="noopener">Discuter sur WhatsApp</a>
-    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang-btn="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-primary nav-cta" href="https://wa.me/33603440050" target="_blank" rel="noopener"><span data-fr>Maquette gratuite</span><span data-en>Free mockup</span></a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
   <div class="mobile-menu" id="mobile-menu" hidden>
-    <a href="#realisations">Réalisations</a>
-    <a href="#services">Services</a>
-    <a href="#packs">Packs</a>
-    <a href="#process">Process</a>
-    <a href="#contact">Contact</a>
-    <a class="btn btn-primary" href="https://wa.me/33603440050" target="_blank" rel="noopener">Discuter sur WhatsApp</a>
+    <a href="#expertise"><span data-fr>Expertise</span><span data-en>Expertise</span></a>
+    <a href="#realisations"><span data-fr>Démos</span><span data-en>Demos</span></a>
+    <a href="#packs"><span data-fr>Tarifs</span><span data-en>Pricing</span></a>
+    <a href="#process"><span data-fr>Méthode</span><span data-en>Process</span></a>
+    <a href="#contact"><span data-fr>Contact</span><span data-en>Contact</span></a>
+    <a class="btn btn-primary" href="https://wa.me/33603440050" target="_blank" rel="noopener"><span data-fr>Maquette gratuite</span><span data-en>Free mockup</span></a>
   </div>
 </header>
 
@@ -57,304 +56,232 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="grid-lines"></div><div class="halo-1"></div><div class="halo-2"></div>
+    </div>
     <div class="container hero-inner">
-      <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span> Studio de création web · Paris</p>
-      <h1 class="reveal">Des sites web modernes pour artisans et commerces qui veulent plus d'appels et de demandes de devis.</h1>
-      <p class="lead reveal">Studio Vela crée des sites vitrines rapides, clairs et pensés mobile, avec des démos interactives pour visualiser votre futur site avant de commencer.</p>
+      <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span><span data-fr>Studio de création web · Paris</span><span data-en>Web design studio · Paris</span></p>
+      <h1 class="reveal">
+        <span data-fr>Des sites web qui font <span class="accent">sonner le téléphone.</span></span>
+        <span data-en>Websites built to make the <span class="accent">phone ring.</span></span>
+      </h1>
+      <p class="lead reveal">
+        <span data-fr>Studio Vela conçoit des sites sur-mesure pour artisans et commerces&nbsp;: rapides, pensés mobile, et structurés pour transformer un visiteur en appel, en réservation ou en devis.</span>
+        <span data-en>Studio Vela designs custom websites for local businesses — fast, mobile-first, and structured to turn a visitor into a call, a booking, or a quote.</span>
+      </p>
       <div class="hero-actions reveal">
-        <a class="btn btn-primary btn-lg" href="https://wa.me/33603440050" target="_blank" rel="noopener">Recevoir une maquette gratuite</a>
-        <a class="btn btn-ghost btn-lg" href="#realisations">Voir les sites démo</a>
+        <a class="btn btn-primary btn-lg" href="https://wa.me/33603440050" target="_blank" rel="noopener"><span data-fr>Recevoir une maquette gratuite</span><span data-en>Get a free mockup</span> <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost btn-lg" href="#realisations"><span data-fr>Explorer les démos</span><span data-en>Explore the demos</span></a>
       </div>
-      <ul class="hero-points reveal">
-        <li><span class="check" aria-hidden="true"></span> Design sur-mesure par métier</li>
-        <li><span class="check" aria-hidden="true"></span> Pensé mobile d'abord</li>
-        <li><span class="check" aria-hidden="true"></span> Maquette gratuite avant de commencer</li>
-        <li><span class="check" aria-hidden="true"></span> Devis clair et facture fournie</li>
-      </ul>
+      <div class="hero-meta reveal">
+        <div><span class="dot" aria-hidden="true"></span><span data-fr>Design sur-mesure par métier</span><span data-en>Custom design per industry</span></div>
+        <div><span class="dot" aria-hidden="true"></span><span data-fr>Pensé mobile d'abord</span><span data-en>Mobile-first by default</span></div>
+        <div><span class="dot" aria-hidden="true"></span><span data-fr>Devis clair, facture fournie</span><span data-en>Clear quote, invoice provided</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- TRUST STRIP -->
+  <!-- MARQUEE -->
   <div class="strip" aria-hidden="true">
     <div class="strip-track">
-      <span>Sites vitrines</span><span class="sep">·</span><span>Artisans &amp; commerces</span><span class="sep">·</span><span>Design sur-mesure</span><span class="sep">·</span><span>Mobile-first</span><span class="sep">·</span><span>Devis clair et facture fournie</span><span class="sep">·</span><span>Paris &amp; Île-de-France</span><span class="sep">·</span>
-      <span>Sites vitrines</span><span class="sep">·</span><span>Artisans &amp; commerces</span><span class="sep">·</span><span>Design sur-mesure</span><span class="sep">·</span><span>Mobile-first</span><span class="sep">·</span><span>Devis clair et facture fournie</span><span class="sep">·</span><span>Paris &amp; Île-de-France</span><span class="sep">·</span>
+      <span data-fr>Sites vitrines</span><span data-en>Showcase sites</span><span class="sep">/</span>
+      <span data-fr>Artisans &amp; commerces</span><span data-en>Local businesses</span><span class="sep">/</span>
+      <span data-fr>Design sur-mesure</span><span data-en>Custom design</span><span class="sep">/</span>
+      <span data-fr>Mobile-first</span><span data-en>Mobile-first</span><span class="sep">/</span>
+      <span data-fr>Pensé pour convertir</span><span data-en>Built to convert</span><span class="sep">/</span>
+      <span data-fr>Paris &amp; Île-de-France</span><span data-en>Paris &amp; Île-de-France</span><span class="sep">/</span>
+      <span data-fr>Sites vitrines</span><span data-en>Showcase sites</span><span class="sep">/</span>
+      <span data-fr>Artisans &amp; commerces</span><span data-en>Local businesses</span><span class="sep">/</span>
+      <span data-fr>Design sur-mesure</span><span data-en>Custom design</span><span class="sep">/</span>
+      <span data-fr>Mobile-first</span><span data-en>Mobile-first</span><span class="sep">/</span>
+      <span data-fr>Pensé pour convertir</span><span data-en>Built to convert</span><span class="sep">/</span>
+      <span data-fr>Paris &amp; Île-de-France</span><span data-en>Paris &amp; Île-de-France</span><span class="sep">/</span>
     </div>
   </div>
 
-  <!-- REALISATIONS -->
+  <!-- EXPERTISE -->
+  <section class="section expertise" id="expertise">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="section-tag"><span data-fr>Expertise</span><span data-en>Expertise</span></p>
+        <h2><span data-fr>Le design au service d'un seul objectif&nbsp;: le contact.</span><span data-en>Design with one job: getting you contacted.</span></h2>
+        <p class="section-sub"><span data-fr>On ne fait pas «&nbsp;un joli site&nbsp;». On conçoit une page qui explique votre métier, rassure le visiteur et le pousse à agir.</span><span data-en>We don't make "a nice site." We build a page that explains your trade, reassures the visitor, and moves them to act.</span></p>
+      </header>
+      <div class="exp-grid">
+        <div class="exp-card reveal"><p class="exp-num">01</p><h3><span data-fr>Stratégie de conversion</span><span data-en>Conversion strategy</span></h3><p><span data-fr>On définit l'action principale — appel, réservation, devis — et on construit toute la page autour d'elle.</span><span data-en>We define the primary action — call, booking, quote — and build the whole page around it.</span></p></div>
+        <div class="exp-card reveal"><p class="exp-num">02</p><h3><span data-fr>Design sur-mesure</span><span data-en>Custom design</span></h3><p><span data-fr>Une direction visuelle propre à votre métier, pas un template revendu cent fois.</span><span data-en>A visual direction specific to your trade — never a template resold a hundred times.</span></p></div>
+        <div class="exp-card reveal"><p class="exp-num">03</p><h3><span data-fr>Expérience mobile</span><span data-en>Mobile experience</span></h3><p><span data-fr>La majorité de vos clients vous découvrent sur téléphone. On conçoit pour eux en premier.</span><span data-en>Most of your clients find you on a phone. We design for them first.</span></p></div>
+        <div class="exp-card reveal"><p class="exp-num">04</p><h3><span data-fr>Référencement local</span><span data-en>Local SEO</span></h3><p><span data-fr>Structure, balises et contenu pensés pour être trouvé dans votre quartier sur Google.</span><span data-en>Structure, metadata and content built to be found in your neighborhood on Google.</span></p></div>
+        <div class="exp-card reveal"><p class="exp-num">05</p><h3><span data-fr>Frontend soigné</span><span data-en>Crafted frontend</span></h3><p><span data-fr>Code propre, rapide et léger. Un site qui charge vite et reste impeccable dans le temps.</span><span data-en>Clean, fast, lightweight code. A site that loads quickly and stays sharp over time.</span></p></div>
+        <div class="exp-card reveal"><p class="exp-num">06</p><h3><span data-fr>Contact sans friction</span><span data-en>Frictionless contact</span></h3><p><span data-fr>WhatsApp, SMS et appel intégrés. Vos clients vous joignent en un geste.</span><span data-en>WhatsApp, SMS and call built in. Your clients reach you in one tap.</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / DEMOS -->
   <section class="section work" id="realisations">
     <div class="container">
       <header class="section-head reveal">
-        <p class="section-tag">Réalisations</p>
-        <h2>6 concepts cliquables, 6 métiers différents</h2>
-        <p class="section-sub">Chaque démo est une mini-maquette cliquable&nbsp;: ouvrez un concept, testez le parcours mobile, les appels à l'action et la direction visuelle. Ce sont des exemples fictifs — pas des clients réels — qui montrent que Studio Vela crée des directions sur-mesure, pas des templates répétés.</p>
+        <p class="section-tag"><span data-fr>Démos interactives</span><span data-en>Interactive demos</span></p>
+        <h2><span data-fr>Six métiers, six directions, zéro template.</span><span data-en>Six trades, six directions, zero template.</span></h2>
+        <p class="section-sub"><span data-fr>Chaque démo est une mini-maquette cliquable&nbsp;: ouvrez un concept, testez le parcours mobile, les appels à l'action et la direction visuelle. Ce sont des concepts fictifs — pas des clients réels — qui montrent comment on adapte le design à chaque activité.</span><span data-en>Each demo is a clickable mini-site: open a concept, test the mobile flow, the calls to action, the visual direction. These are fictional concepts — not real clients — showing how we adapt design to each trade.</span></p>
       </header>
-
       <div class="work-grid">
 
         <a class="project reveal" href="demos/barbershop.html">
-          <div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">maison-figaro.fr</span></div>
-          <div class="shot s-barber">
-            <span class="shot-deco" aria-hidden="true"></span>
-            <p class="shot-eyebrow">Barbier · Coupe homme</p>
-            <h3>L'art du rasage, à l'ancienne.</h3>
-            <span class="shot-cta">Réserver une place →</span>
-          </div>
-          <div class="project-meta">
-            <div><strong>Barbershop</strong><span>Booking · galerie · tarifs</span></div>
-            <span class="tagchip">Concept démo</span>
-          </div>
-          <p class="project-angle">Concept éditorial sombre, pensé pour transformer une envie de coupe en réservation rapide.</p>
-          <span class="project-open">Voir le site démo →</span>
+          <div class="project-frame"><div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">maison-figaro.fr</span></div>
+          <div class="shot s-barber"><span class="shot-deco" aria-hidden="true"></span><p class="shot-eyebrow">Barbier · Bastille</p><h3><span data-fr>Coupes nettes, barbes précises.</span><span data-en>Sharp cuts, precise beards.</span></h3><span class="shot-cta"><span data-fr>Réserver →</span><span data-en>Book →</span></span></div></div>
+          <div class="project-meta"><div><strong>Maison Figaro</strong><span class="pm-type" data-fr>Barbershop premium</span><span class="pm-type" data-en>Premium barbershop</span></div><span class="tagchip">Concept</span></div>
+          <p class="project-angle"><span data-fr>Concept éditorial sombre, conçu pour transformer une envie de coupe en réservation rapide.</span><span data-en>A dark editorial concept built to turn haircut intent into a fast booking.</span></p>
+          <span class="project-open"><span data-fr>Voir le site démo</span><span data-en>View demo site</span> <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
         <a class="project reveal" href="demos/salon-beaute.html">
-          <div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">studio-lina.fr</span></div>
-          <div class="shot s-salon">
-            <span class="shot-deco" aria-hidden="true"></span>
-            <p class="shot-eyebrow">Coiffure · Beauté</p>
-            <h3>Révélez votre plus belle version.</h3>
-            <span class="shot-cta">Prendre rendez-vous →</span>
-          </div>
-          <div class="project-meta">
-            <div><strong>Salon de beauté</strong><span>Menu soins · avant/après · RDV</span></div>
-            <span class="tagchip">Concept démo</span>
-          </div>
-          <p class="project-angle">Direction douce et élégante, centrée sur la transformation et la prise de rendez-vous.</p>
-          <span class="project-open">Voir le site démo →</span>
+          <div class="project-frame"><div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">studio-lina.fr</span></div>
+          <div class="shot s-salon"><span class="shot-deco" aria-hidden="true"></span><p class="shot-eyebrow">Coiffure · Passy</p><h3><span data-fr>Une beauté naturelle.</span><span data-en>Natural beauty.</span></h3><span class="shot-cta"><span data-fr>Rendez-vous →</span><span data-en>Appointment →</span></span></div></div>
+          <div class="project-meta"><div><strong>Studio Lina</strong><span class="pm-type" data-fr>Salon de beauté</span><span class="pm-type" data-en>Beauty salon</span></div><span class="tagchip">Concept</span></div>
+          <p class="project-angle"><span data-fr>Direction douce et élégante, centrée sur la transformation et la prise de rendez-vous.</span><span data-en>A soft, elegant direction centered on transformation and booking.</span></p>
+          <span class="project-open"><span data-fr>Voir le site démo</span><span data-en>View demo site</span> <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
         <a class="project reveal" href="demos/plombier.html">
-          <div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">berger-plomberie.fr</span></div>
-          <div class="shot s-plumber">
-            <span class="shot-deco" aria-hidden="true"></span>
-            <p class="shot-eyebrow">Plomberie · Chauffage</p>
-            <h3>Une fuite ? On vous répond vite.</h3>
-            <span class="shot-cta">Appeler maintenant →</span>
-          </div>
-          <div class="project-meta">
-            <div><strong>Plombier</strong><span>Urgence · devis · zones</span></div>
-            <span class="tagchip">Concept démo</span>
-          </div>
-          <p class="project-angle">Site fonctionnel d'urgence : sélecteur de problème, appel direct et devis transparent.</p>
-          <span class="project-open">Voir le site démo →</span>
+          <div class="project-frame"><div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">berger-plomberie.fr</span></div>
+          <div class="shot s-plumber"><span class="shot-deco" aria-hidden="true"></span><p class="shot-eyebrow">Plomberie · Paris Est</p><h3><span data-fr>Un problème, un devis clair.</span><span data-en>One problem, one clear quote.</span></h3><span class="shot-cta"><span data-fr>Appeler →</span><span data-en>Call →</span></span></div></div>
+          <div class="project-meta"><div><strong>Berger Plomberie</strong><span class="pm-type" data-fr>Plombier</span><span class="pm-type" data-en>Plumber</span></div><span class="tagchip">Concept</span></div>
+          <p class="project-angle"><span data-fr>Site fonctionnel d'urgence&nbsp;: sélecteur de problème, appel direct et devis transparent.</span><span data-en>A functional emergency site: problem selector, direct call, transparent quote.</span></p>
+          <span class="project-open"><span data-fr>Voir le site démo</span><span data-en>View demo site</span> <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
         <a class="project reveal" href="demos/restaurant.html">
-          <div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">trattoria-nonna.fr</span></div>
-          <div class="shot s-resto">
-            <span class="shot-deco" aria-hidden="true"></span>
-            <p class="shot-eyebrow">Restaurant · Italien</p>
-            <h3>La cuisine de la Nonna, à Paris.</h3>
-            <span class="shot-cta">Réserver une table →</span>
-          </div>
-          <div class="project-meta">
-            <div><strong>Restaurant</strong><span>Menu · réservation · horaires</span></div>
-            <span class="tagchip">Concept démo</span>
-          </div>
-          <p class="project-angle">Menu et ambiance en vedette, conçus pour donner faim et déclencher la réservation.</p>
-          <span class="project-open">Voir le site démo →</span>
+          <div class="project-frame"><div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">trattoria-nonna.fr</span></div>
+          <div class="shot s-resto"><span class="shot-deco" aria-hidden="true"></span><p class="shot-eyebrow">Restaurant · Paris 9</p><h3><span data-fr>Pâtes fraîches, tables vivantes.</span><span data-en>Fresh pasta, lively tables.</span></h3><span class="shot-cta"><span data-fr>Réserver →</span><span data-en>Reserve →</span></span></div></div>
+          <div class="project-meta"><div><strong>Trattoria Nonna</strong><span class="pm-type" data-fr>Restaurant italien</span><span class="pm-type" data-en>Italian restaurant</span></div><span class="tagchip">Concept</span></div>
+          <p class="project-angle"><span data-fr>Menu et ambiance en vedette, conçus pour donner faim et déclencher la réservation.</span><span data-en>Menu and atmosphere as the centerpiece, built to create appetite and drive reservations.</span></p>
+          <span class="project-open"><span data-fr>Voir le site démo</span><span data-en>View demo site</span> <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
         <a class="project reveal" href="demos/boutique.html">
-          <div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">maison-laurent.fr</span></div>
-          <div class="shot s-shop">
-            <span class="shot-deco" aria-hidden="true"></span>
-            <p class="shot-eyebrow">Boutique · E-commerce</p>
-            <h3>Vos produits, mis en valeur.</h3>
-            <span class="shot-cta">Découvrir la boutique →</span>
-          </div>
-          <div class="project-meta">
-            <div><strong>Boutique en ligne</strong><span>Grille produits · collections</span></div>
-            <span class="tagchip">Concept démo</span>
-          </div>
-          <p class="project-angle">Vitrine éditoriale produit, premium et simple, sans paiement — pour donner envie d'acheter.</p>
-          <span class="project-open">Voir le site démo →</span>
+          <div class="project-frame"><div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">maison-laurent.fr</span></div>
+          <div class="shot s-shop"><span class="shot-deco" aria-hidden="true"></span><p class="shot-eyebrow">Boutique · Concept</p><h3><span data-fr>Objets choisis, mis en valeur.</span><span data-en>Chosen objects, beautifully shown.</span></h3><span class="shot-cta"><span data-fr>Collection →</span><span data-en>Collection →</span></span></div></div>
+          <div class="project-meta"><div><strong>Maison Laurent</strong><span class="pm-type" data-fr>Boutique en ligne</span><span class="pm-type" data-en>Online boutique</span></div><span class="tagchip">Concept</span></div>
+          <p class="project-angle"><span data-fr>Vitrine éditoriale produit, premium et simple, sans paiement — pour donner envie d'acheter.</span><span data-en>An editorial product storefront, premium and simple, no checkout — built to spark desire.</span></p>
+          <span class="project-open"><span data-fr>Voir le site démo</span><span data-en>View demo site</span> <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
         <a class="project reveal" href="demos/garage.html">
-          <div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">garage-moreau.fr</span></div>
-          <div class="shot s-garage">
-            <span class="shot-deco" aria-hidden="true"></span>
-            <p class="shot-eyebrow">Garage · Mécanique</p>
-            <h3>Diagnostic clair, devis honnête.</h3>
-            <span class="shot-cta">Demander un devis →</span>
-          </div>
-          <div class="project-meta">
-            <div><strong>Garage auto</strong><span>Services · diagnostic · devis</span></div>
-            <span class="tagchip">Concept démo</span>
-          </div>
-          <p class="project-angle">Approche diagnostic-first, technique et transparente, orientée demande de devis.</p>
-          <span class="project-open">Voir le site démo →</span>
+          <div class="project-frame"><div class="browser"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span><span class="burl">garage-moreau.fr</span></div>
+          <div class="shot s-garage"><span class="shot-deco" aria-hidden="true"></span><p class="shot-eyebrow">Garage · Boulogne</p><h3><span data-fr>Diagnostic clair, devis expliqué.</span><span data-en>Clear diagnosis, explained quote.</span></h3><span class="shot-cta"><span data-fr>Devis →</span><span data-en>Quote →</span></span></div></div>
+          <div class="project-meta"><div><strong>Garage Moreau</strong><span class="pm-type" data-fr>Garage auto</span><span class="pm-type" data-en>Auto repair</span></div><span class="tagchip">Concept</span></div>
+          <p class="project-angle"><span data-fr>Approche diagnostic-first, technique et transparente, orientée demande de devis.</span><span data-en>A diagnostic-first approach — technical, transparent, quote-oriented.</span></p>
+          <span class="project-open"><span data-fr>Voir le site démo</span><span data-en>View demo site</span> <span class="arrow" aria-hidden="true">→</span></span>
         </a>
 
       </div>
-      <p class="work-note reveal">Ces projets sont des concepts de démonstration (exemples fictifs), pas des clients réels. Cliquez sur une carte pour explorer le site complet.</p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section class="section services" id="services">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="section-tag">Services</p>
-        <h2>Ce que je conçois pour vous</h2>
-        <p class="section-sub">Design, structure, textes, mobile et contact&nbsp;: tout est pensé avant de coder.</p>
-      </header>
-      <div class="svc-grid">
-        <article class="svc-card reveal">
-          <div class="svc-ic" aria-hidden="true">①</div>
-          <h3>Site vitrine sur-mesure</h3>
-          <p>Un site d'une à plusieurs pages, conçu pour votre métier. Vous montrez votre activité, le site explique, rassure et pousse au contact.</p>
-        </article>
-        <article class="svc-card reveal">
-          <div class="svc-ic" aria-hidden="true">②</div>
-          <h3>Landing page de conversion</h3>
-          <p>Une page unique et efficace, structurée pour un seul objectif&nbsp;: faire venir des appels, des devis ou des réservations.</p>
-        </article>
-        <article class="svc-card reveal">
-          <div class="svc-ic" aria-hidden="true">③</div>
-          <h3>Site portfolio</h3>
-          <p>Une présentation propre de votre travail, vos prestations et vos réalisations, pensée pour inspirer confiance.</p>
-        </article>
-        <article class="svc-card reveal">
-          <div class="svc-ic" aria-hidden="true">④</div>
-          <h3>Refonte de site</h3>
-          <p>Votre site actuel est lent, daté ou peu lisible sur mobile&nbsp;? Je le repense entièrement, plus clair et plus moderne.</p>
-        </article>
-        <article class="svc-card reveal">
-          <div class="svc-ic" aria-hidden="true">⑤</div>
-          <h3>Référencement local de base</h3>
-          <p>Structure SEO, balises et contenu pensés pour que les habitants de votre quartier vous trouvent sur Google.</p>
-        </article>
-        <article class="svc-card reveal">
-          <div class="svc-ic" aria-hidden="true">⑥</div>
-          <h3>Contact WhatsApp &amp; SMS</h3>
-          <p>Boutons d'appel, SMS et WhatsApp intégrés, plus un formulaire de demande de devis. Vos clients vous joignent en un geste.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACKS -->
+  <!-- PACKAGES -->
   <section class="section packs" id="packs">
     <div class="container">
       <header class="section-head reveal">
-        <p class="section-tag">Packs &amp; tarifs</p>
-        <h2>Des formules claires, annoncées à l'avance</h2>
-        <p class="section-sub">Vous savez exactement ce que vous obtenez. Devis clair et facture fournie&nbsp;: le détail final est confirmé ensemble avant de démarrer. Livraison estimée en 7 jours après signature du contrat.</p>
+        <p class="section-tag"><span data-fr>Tarifs</span><span data-en>Pricing</span></p>
+        <h2><span data-fr>Des formules claires, annoncées à l'avance.</span><span data-en>Clear packages, priced up front.</span></h2>
+        <p class="section-sub"><span data-fr>Acompte de 50&nbsp;% pour démarrer, le solde à la livraison. Devis clair et facture fournie. Livraison estimée en 7&nbsp;jours après signature.</span><span data-en>50% deposit to start, balance on delivery. Clear quote and invoice provided. Estimated delivery 7 days after signature.</span></p>
       </header>
       <div class="plans">
-
-        <article class="plan reveal">
+        <div class="plan reveal">
           <h3>Starter</h3>
-          <p class="plan-who">Pour une présence en ligne propre et professionnelle.</p>
-          <p class="plan-price">dès 490€</p>
-          <p class="plan-note">paiement unique</p>
+          <p class="plan-who"><span data-fr>Pour une présence en ligne propre et professionnelle.</span><span data-en>For a clean, professional online presence.</span></p>
+          <p class="plan-price"><span class="cur">dès</span> 490<span class="cur">€</span></p>
+          <p class="plan-note" data-fr>paiement unique</p><p class="plan-note" data-en>one-time</p>
           <ul class="plan-list">
-            <li>Site une page (one-page)</li>
-            <li>Design pensé mobile d'abord</li>
-            <li>Sections accueil, services, contact</li>
-            <li>Métadonnées SEO de base</li>
-            <li>Boutons WhatsApp / SMS / appel</li>
-            <li>Fichiers prêts à déployer</li>
+            <li><span data-fr>Site une page</span><span data-en>One-page site</span></li>
+            <li><span data-fr>Design pensé mobile d'abord</span><span data-en>Mobile-first design</span></li>
+            <li><span data-fr>Sections accueil, services, contact</span><span data-en>Home, services, contact sections</span></li>
+            <li><span data-fr>Métadonnées SEO de base</span><span data-en>Basic SEO metadata</span></li>
+            <li><span data-fr>Boutons WhatsApp / SMS / appel</span><span data-en>WhatsApp / SMS / call buttons</span></li>
+            <li><span data-fr>Fichiers prêts à déployer</span><span data-en>Deploy-ready files</span></li>
           </ul>
-          <a class="btn btn-outline" href="#contact">Choisir Starter</a>
-        </article>
-
-        <article class="plan plan-popular reveal">
-          <span class="plan-badge">Le plus choisi</span>
+          <a class="btn btn-primary" href="#contact"><span data-fr>Choisir Starter</span><span data-en>Choose Starter</span></a>
+        </div>
+        <div class="plan plan-popular reveal">
+          <span class="plan-badge" data-fr>Le plus choisi</span><span class="plan-badge" data-en>Most chosen</span>
           <h3>Pro</h3>
-          <p class="plan-who">Pour un site plus complet qui inspire davantage confiance.</p>
-          <p class="plan-price">dès 890€</p>
-          <p class="plan-note">paiement unique</p>
+          <p class="plan-who"><span data-fr>Un site complet qui inspire davantage confiance.</span><span data-en>A complete site that builds more trust.</span></p>
+          <p class="plan-price"><span class="cur">dès</span> 890<span class="cur">€</span></p>
+          <p class="plan-note" data-fr>paiement unique</p><p class="plan-note" data-en>one-time</p>
           <ul class="plan-list">
-            <li>Jusqu'à 5 sections ou pages</li>
-            <li>Page d'accueil sur-mesure</li>
-            <li>Section galerie ou avant/après</li>
-            <li>FAQ &amp; formulaire de contact</li>
-            <li>Structure SEO locale</li>
-            <li>Design de conversion renforcé</li>
+            <li><span data-fr>Jusqu'à 5 sections ou pages</span><span data-en>Up to 5 sections or pages</span></li>
+            <li><span data-fr>Page d'accueil sur-mesure</span><span data-en>Custom homepage</span></li>
+            <li><span data-fr>Section galerie ou avant/après</span><span data-en>Gallery or before/after section</span></li>
+            <li><span data-fr>FAQ &amp; formulaire de contact</span><span data-en>FAQ &amp; contact form</span></li>
+            <li><span data-fr>Structure SEO locale</span><span data-en>Local SEO structure</span></li>
+            <li><span data-fr>Design de conversion renforcé</span><span data-en>Stronger conversion design</span></li>
           </ul>
-          <a class="btn btn-primary" href="#contact">Choisir Pro</a>
-        </article>
-
-        <article class="plan reveal">
+          <a class="btn btn-primary" href="#contact"><span data-fr>Choisir Pro</span><span data-en>Choose Pro</span></a>
+        </div>
+        <div class="plan reveal">
           <h3>Premium</h3>
-          <p class="plan-who">Pour un site plus poussé, animé et complet.</p>
-          <p class="plan-price">dès 1490€</p>
-          <p class="plan-note">paiement unique</p>
+          <p class="plan-who"><span data-fr>Pour un site plus poussé, animé et complet.</span><span data-en>For a richer, animated, complete site.</span></p>
+          <p class="plan-price"><span class="cur">dès</span> 1490<span class="cur">€</span></p>
+          <p class="plan-note" data-fr>paiement unique</p><p class="plan-note" data-en>one-time</p>
           <ul class="plan-list">
-            <li>Tout le pack Pro</li>
-            <li>Direction artistique plus poussée</li>
-            <li>Animations &amp; interactions avancées</li>
-            <li>Structure SEO étendue</li>
-            <li>Rédaction des textes plus détaillée</li>
-            <li>Emplacement réservation / contact</li>
+            <li><span data-fr>Tout le pack Pro</span><span data-en>Everything in Pro</span></li>
+            <li><span data-fr>Direction artistique plus poussée</span><span data-en>Elevated art direction</span></li>
+            <li><span data-fr>Animations &amp; interactions avancées</span><span data-en>Advanced animation &amp; interaction</span></li>
+            <li><span data-fr>Structure SEO étendue</span><span data-en>Extended SEO structure</span></li>
+            <li><span data-fr>Rédaction des textes plus détaillée</span><span data-en>More detailed copywriting</span></li>
+            <li><span data-fr>Emplacement réservation / contact</span><span data-en>Booking / contact placement</span></li>
           </ul>
-          <a class="btn btn-outline" href="#contact">Choisir Premium</a>
-        </article>
-
+          <a class="btn btn-primary" href="#contact"><span data-fr>Choisir Premium</span><span data-en>Choose Premium</span></a>
+        </div>
       </div>
-      <p class="maint-note reveal">Option maintenance&nbsp;: <strong>à partir de 35€/mois</strong> — petites modifications, mises à jour et suivi. Optionnel, à confirmer ensemble.</p>
+      <p class="maint-note reveal"><span data-fr>Option maintenance&nbsp;: </span><span data-en>Maintenance option: </span><strong><span data-fr>dès 35€/mois</span><span data-en>from €35/mo</span></strong><span data-fr> — petites modifications, mises à jour et suivi.</span><span data-en> — small edits, updates and upkeep.</span></p>
     </div>
   </section>
 
-  <!-- CE QUE VOUS RECEVEZ -->
-  <section class="section receive" id="livrables">
+  <!-- RECEIVE -->
+  <section class="section" id="livrables">
     <div class="container">
       <header class="section-head reveal">
-        <p class="section-tag">Ce que vous recevez</p>
-        <h2>Un site complet, prêt à l'emploi</h2>
-        <p class="section-sub">Tout ce qu'il faut pour être en ligne et recevoir des contacts, livré clé en main.</p>
+        <p class="section-tag"><span data-fr>Ce que vous recevez</span><span data-en>What you receive</span></p>
+        <h2><span data-fr>Un site complet, prêt à l'emploi.</span><span data-en>A complete site, ready to use.</span></h2>
       </header>
       <div class="receive-grid">
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Design sur-mesure adapté à votre métier</div>
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Site responsive, pensé mobile d'abord</div>
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Textes structurés et lisibles</div>
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Boutons WhatsApp / SMS / appel</div>
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Référencement local de base</div>
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Fichiers prêts à déployer</div>
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Pages légales de base</div>
-        <div class="receive-item reveal"><span class="check" aria-hidden="true"></span> Accompagnement jusqu'à la mise en ligne</div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Design sur-mesure adapté à votre métier</span><span data-en>Custom design tailored to your trade</span></div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Site responsive, pensé mobile d'abord</span><span data-en>Responsive, mobile-first site</span></div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Textes structurés et lisibles</span><span data-en>Structured, readable copy</span></div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Boutons WhatsApp / SMS / appel</span><span data-en>WhatsApp / SMS / call buttons</span></div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Référencement local de base</span><span data-en>Basic local SEO</span></div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Fichiers prêts à déployer</span><span data-en>Deploy-ready files</span></div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Pages légales de base</span><span data-en>Basic legal pages</span></div>
+        <div class="receive-item reveal"><span class="ck" aria-hidden="true">✓</span><span data-fr>Accompagnement jusqu'à la mise en ligne</span><span data-en>Support through to launch</span></div>
       </div>
-    </div>
-  </section>
-
-  <!-- INCLUS / NON INCLUS -->
-  <section class="section incl" id="inclus">
-    <div class="container">
-      <header class="section-head reveal">
-        <p class="section-tag">Clair dès le départ</p>
-        <h2>Inclus &amp; non inclus</h2>
-        <p class="section-sub">Pour éviter toute surprise. Tout ce qui n'est pas inclus par défaut peut être ajouté ou organisé ensemble.</p>
-      </header>
       <div class="incl-grid">
         <div class="incl-col incl-yes reveal">
-          <h3>Inclus</h3>
+          <h3><span data-fr>Inclus</span><span data-en>Included</span></h3>
           <ul>
-            <li>Design personnalisé</li>
-            <li>Structure mobile-first</li>
-            <li>Copywriting de base</li>
-            <li>CTA de contact (WhatsApp / SMS / appel)</li>
-            <li>Fichiers HTML / CSS / JS</li>
-            <li>Accompagnement jusqu'à mise en ligne</li>
+            <li><span data-fr>Design personnalisé</span><span data-en>Custom design</span></li>
+            <li><span data-fr>Structure mobile-first</span><span data-en>Mobile-first structure</span></li>
+            <li><span data-fr>Copywriting de base</span><span data-en>Base copywriting</span></li>
+            <li><span data-fr>CTA de contact (WhatsApp / SMS / appel)</span><span data-en>Contact CTAs (WhatsApp / SMS / call)</span></li>
+            <li><span data-fr>Fichiers HTML / CSS / JS</span><span data-en>HTML / CSS / JS files</span></li>
+            <li><span data-fr>Accompagnement jusqu'à mise en ligne</span><span data-en>Support through to launch</span></li>
           </ul>
         </div>
         <div class="incl-col incl-no reveal">
-          <h3>Non inclus par défaut</h3>
+          <h3><span data-fr>Non inclus par défaut</span><span data-en>Not included by default</span></h3>
           <ul>
-            <li>Nom de domaine</li>
-            <li>Hébergement</li>
-            <li>E-commerce complet</li>
-            <li>Paiement en ligne</li>
-            <li>Référencement garanti</li>
-            <li>Maintenance mensuelle (sauf si choisie)</li>
+            <li><span data-fr>Nom de domaine</span><span data-en>Domain name</span></li>
+            <li><span data-fr>Hébergement</span><span data-en>Hosting</span></li>
+            <li><span data-fr>E-commerce complet</span><span data-en>Full e-commerce</span></li>
+            <li><span data-fr>Paiement en ligne</span><span data-en>Online payment</span></li>
+            <li><span data-fr>Référencement garanti</span><span data-en>Guaranteed ranking</span></li>
+            <li><span data-fr>Maintenance mensuelle (sauf si choisie)</span><span data-en>Monthly maintenance (unless chosen)</span></li>
           </ul>
         </div>
       </div>
-      <p class="maint-note reveal" style="color:var(--muted)">Maquette gratuite · devis gratuit · livraison estimée en 7 jours après signature du contrat · devis clair et facture fournie · maintenance disponible dès 35€/mois.</p>
+      <p class="maint-note reveal"><span data-fr>Maquette gratuite · devis gratuit · livraison estimée en 7 jours après signature · devis clair et facture fournie.</span><span data-en>Free mockup · free quote · estimated delivery 7 days after signature · clear quote and invoice provided.</span></p>
     </div>
   </section>
 
@@ -362,52 +289,36 @@
   <section class="section process" id="process">
     <div class="container">
       <header class="section-head reveal">
-        <p class="section-tag">Process</p>
-        <h2>De l'idée au site en ligne, simplement</h2>
+        <p class="section-tag"><span data-fr>Méthode</span><span data-en>Process</span></p>
+        <h2><span data-fr>De l'échange à la mise en ligne, sans détour.</span><span data-en>From first call to launch, no detours.</span></h2>
       </header>
-      <ol class="steps">
-        <li class="step reveal">
-          <span class="step-n">01</span>
-          <h3>On échange</h3>
-          <p>Un court échange pour comprendre votre métier, vos clients et votre objectif.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step-n">02</span>
-          <h3>Maquette gratuite</h3>
-          <p>Je vous prépare un aperçu de votre futur site. Vous voyez le rendu avant tout engagement.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step-n">03</span>
-          <h3>Création</h3>
-          <p>Je conçois le site complet, avec vos retours intégrés au fur et à mesure.</p>
-        </li>
-        <li class="step reveal">
-          <span class="step-n">04</span>
-          <h3>Mise en ligne</h3>
-          <p>Votre site est publié et prêt à recevoir vos premiers contacts.</p>
-        </li>
-      </ol>
+      <div class="steps">
+        <div class="step reveal"><p class="step-n">01</p><h3><span data-fr>On échange</span><span data-en>We talk</span></h3><p><span data-fr>Un court appel pour comprendre votre métier, vos clients et votre objectif principal.</span><span data-en>A short call to understand your trade, your clients, and your main goal.</span></p></div>
+        <div class="step reveal"><p class="step-n">02</p><h3><span data-fr>Maquette gratuite</span><span data-en>Free mockup</span></h3><p><span data-fr>Je vous prépare un aperçu de votre futur site. Vous voyez avant de vous engager.</span><span data-en>I prepare a preview of your future site. You see it before committing.</span></p></div>
+        <div class="step reveal"><p class="step-n">03</p><h3><span data-fr>Création</span><span data-en>Build</span></h3><p><span data-fr>Je conçois le site complet, avec vos retours intégrés au fur et à mesure.</span><span data-en>I build the full site, folding in your feedback as we go.</span></p></div>
+        <div class="step reveal"><p class="step-n">04</p><h3><span data-fr>Mise en ligne</span><span data-en>Launch</span></h3><p><span data-fr>Votre site est publié et prêt à recevoir vos premiers contacts.</span><span data-en>Your site goes live, ready to receive its first leads.</span></p></div>
+      </div>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="section about" id="about">
+  <section class="section about">
     <div class="container about-inner">
       <div class="reveal">
-        <p class="section-tag">Pourquoi Studio Vela</p>
-        <h2>Un interlocuteur unique, pas une agence anonyme</h2>
-        <p class="about-lead">Vous parlez directement à la personne qui conçoit votre site. Pas de commercial, pas de jargon&nbsp;: chaque business reçoit un design spécifique, pas un template revendu cent fois.</p>
+        <p class="section-tag"><span data-fr>Le studio</span><span data-en>The studio</span></p>
+        <h2><span data-fr>Un interlocuteur unique, pas une agence anonyme.</span><span data-en>One person, not an anonymous agency.</span></h2>
+        <p class="about-lead"><span data-fr>Vous parlez directement à la personne qui conçoit votre site. Pas de commercial, pas de jargon, pas de délais qui s'éternisent. Chaque projet reçoit une direction spécifique — pensée pour votre métier et vos clients.</span><span data-en>You talk directly to the person designing your site. No sales rep, no jargon, no endless delays. Every project gets its own direction — built for your trade and your clients.</span></p>
         <ul class="about-list">
-          <li><span class="check" aria-hidden="true"></span> <span><strong>Sur-mesure</strong> — un design pensé pour votre métier, pas un modèle générique.</span></li>
-          <li><span class="check" aria-hidden="true"></span> <span><strong>Clair</strong> — vous savez ce que vous obtenez et combien ça coûte, dès le départ.</span></li>
-          <li><span class="check" aria-hidden="true"></span> <span><strong>Direct</strong> — un échange simple par WhatsApp ou SMS, sans étapes inutiles.</span></li>
-          <li><span class="check" aria-hidden="true"></span> <span><strong>Mobile d'abord</strong> — la majorité de vos clients vous découvrent sur téléphone.</span></li>
+          <li><span class="ck" aria-hidden="true">✓</span><span><strong><span data-fr>Sur-mesure.</span><span data-en>Custom.</span></strong> <span data-fr>Une direction pensée pour votre activité, pas un modèle générique.</span><span data-en>A direction built for your business, not a generic template.</span></span></li>
+          <li><span class="ck" aria-hidden="true">✓</span><span><strong><span data-fr>Clair.</span><span data-en>Clear.</span></strong> <span data-fr>Vous savez ce que vous obtenez et combien ça coûte, dès le départ.</span><span data-en>You know what you get and what it costs, from the start.</span></span></li>
+          <li><span class="ck" aria-hidden="true">✓</span><span><strong><span data-fr>Direct.</span><span data-en>Direct.</span></strong> <span data-fr>Un échange simple par WhatsApp ou SMS, sans étapes inutiles.</span><span data-en>A simple exchange by WhatsApp or SMS, no needless steps.</span></span></li>
+          <li><span class="ck" aria-hidden="true">✓</span><span><strong><span data-fr>Mobile d'abord.</span><span data-en>Mobile-first.</span></strong> <span data-fr>Là où la majorité de vos clients vous découvrent.</span><span data-en>Where most of your clients discover you.</span></span></li>
         </ul>
       </div>
-      <aside class="about-card reveal">
-        <p class="about-quote">« Vous montrez votre métier. Le site explique, rassure et pousse le client à vous contacter. »</p>
-        <hr>
-        <p class="about-foot">Studio Vela — création de sites web pour commerces locaux, Paris &amp; Île-de-France.</p>
+      <aside class="about-panel reveal">
+        <p class="about-stat">7 <span data-fr style="font-size:1.4rem">jours</span><span data-en style="font-size:1.4rem">days</span></p>
+        <p><span data-fr>délai de livraison estimé</span><span data-en>estimated delivery time</span></p>
+        <p class="about-quote"><span data-fr>«&nbsp;Mon objectif est simple&nbsp;: que votre site vous rapporte plus de clients qu'il ne vous a coûté.&nbsp;»</span><span data-en>"My goal is simple: that your site brings you more clients than it cost you."</span></p>
       </aside>
     </div>
   </section>
@@ -416,53 +327,37 @@
   <section class="section faq" id="faq">
     <div class="container">
       <header class="section-head reveal">
-        <p class="section-tag">Questions fréquentes</p>
-        <h2>Vous vous demandez peut-être…</h2>
+        <p class="section-tag"><span data-fr>Questions fréquentes</span><span data-en>FAQ</span></p>
+        <h2><span data-fr>Ce que les clients demandent.</span><span data-en>What clients ask.</span></h2>
       </header>
-      <div class="faq-list">
-        <details class="reveal" open>
-          <summary>Combien coûte un site ?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <div class="faq-body"><p>Les packs démarrent à 490€ pour un site une page, 890€ pour un site plus complet, et 1490€ pour une version plus poussée. Le prix final dépend du nombre de pages et du contenu&nbsp;; il est confirmé avant de commencer. Devis clair et facture fournie dans tous les cas.</p></div>
-        </details>
-        <details class="reveal">
-          <summary>Le site sera-t-il bien sur mobile ?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <div class="faq-body"><p>Oui. Chaque site est conçu mobile d'abord, car c'est là que la plupart de vos clients vous découvrent. Tout reste lisible et facile à utiliser sur téléphone.</p></div>
-        </details>
-        <details class="reveal">
-          <summary>Puis-je voir des exemples avant de décider ?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <div class="faq-body"><p>Bien sûr. La section Réalisations présente des concepts pour plusieurs métiers, et je peux vous préparer une maquette gratuite de votre futur site avant tout engagement.</p></div>
-        </details>
-        <details class="reveal">
-          <summary>Pourrai-je modifier le site plus tard ?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <div class="faq-body"><p>Oui. Deux options&nbsp;: je vous explique comment faire les petites modifications, ou vous prenez l'option maintenance pour que je m'en occupe. Vous choisissez.</p></div>
-        </details>
-        <details class="reveal">
-          <summary>Comment se passe le contact ?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <div class="faq-body"><p>Le plus simple est WhatsApp ou SMS au 06 03 44 00 50. On échange sur votre projet, puis je vous propose une maquette gratuite.</p></div>
-        </details>
-        <details class="reveal">
-          <summary>En combien de temps le site est-il livré ?<span class="faq-icon" aria-hidden="true"></span></summary>
-          <div class="faq-body"><p>Livraison estimée en 7 jours après la signature du contrat, selon le pack et la rapidité de vos retours. Le délai exact est confirmé ensemble avant de démarrer.</p></div>
-        </details>
+      <div class="faq-list reveal">
+        <details open><summary><span data-fr>Combien coûte un site&nbsp;?</span><span data-en>How much does a site cost?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><span data-fr>Les packs démarrent à 490€ (une page), 890€ (site complet) et 1490€ (version poussée). Le prix final dépend du nombre de pages et du contenu, et il est confirmé avant de commencer. Devis clair et facture fournie.</span><span data-en>Packages start at €490 (one page), €890 (full site) and €1490 (advanced). The final price depends on pages and content, and is confirmed before we start. Clear quote and invoice provided.</span></div></details>
+        <details><summary><span data-fr>En combien de temps le site est-il livré&nbsp;?</span><span data-en>How fast is the site delivered?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><span data-fr>Livraison estimée en 7 jours après la signature du contrat, selon le pack et la rapidité de vos retours.</span><span data-en>Estimated delivery 7 days after the contract is signed, depending on the package and how fast you reply.</span></div></details>
+        <details><summary><span data-fr>Le site sera-t-il bien sur mobile&nbsp;?</span><span data-en>Will it work well on mobile?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><span data-fr>Oui. Chaque site est conçu mobile d'abord, car c'est là que la plupart de vos clients vous découvrent.</span><span data-en>Yes. Every site is designed mobile-first, since that's where most of your clients find you.</span></div></details>
+        <details><summary><span data-fr>Puis-je voir des exemples avant de décider&nbsp;?</span><span data-en>Can I see examples first?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><span data-fr>Oui&nbsp;: les six démos ci-dessus sont cliquables, et je peux vous préparer une maquette gratuite de votre futur site avant tout engagement.</span><span data-en>Yes: the six demos above are clickable, and I can prepare a free mockup of your future site before any commitment.</span></div></details>
+        <details><summary><span data-fr>Pourrai-je modifier le site plus tard&nbsp;?</span><span data-en>Can I edit the site later?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><span data-fr>Oui. Soit je vous explique comment faire les petites modifications, soit vous prenez l'option maintenance et je m'en occupe.</span><span data-en>Yes. Either I show you how to make small edits, or you take the maintenance option and I handle it.</span></div></details>
+        <details><summary><span data-fr>L'hébergement et le domaine sont-ils inclus&nbsp;?</span><span data-en>Are hosting and domain included?</span><span class="faq-icon" aria-hidden="true"></span></summary><div class="faq-body"><span data-fr>Non par défaut. Je vous accompagne pour les mettre en place&nbsp;; le domaine reste à votre nom et vous appartient.</span><span data-en>Not by default. I help you set them up; the domain stays in your name and belongs to you.</span></div></details>
       </div>
     </div>
   </section>
 
-  <!-- CTA / CONTACT -->
+  <!-- CONTACT -->
   <section class="section contact" id="contact">
-    <div class="container contact-inner reveal">
-      <h2>Prêt à avoir un site qui vous ressemble&nbsp;?</h2>
-      <p>Recevez une maquette gratuite de votre futur site. Sans engagement, sans pression.</p>
-      <div class="contact-actions">
-        <a class="btn btn-primary btn-lg" href="https://wa.me/33603440050" target="_blank" rel="noopener">Discuter sur WhatsApp</a>
-        <a class="btn btn-light btn-lg" href="sms:+33603440050">Envoyer un SMS</a>
-      </div>
-      <div class="contact-meta">
-        <a href="tel:+33603440050" class="contact-phone">06 03 44 00 50</a>
-        <span class="contact-sep" aria-hidden="true">·</span>
-        <a href="mailto:studiovelaparis@gmail.com">studiovelaparis@gmail.com</a>
-        <span class="contact-sep" aria-hidden="true">·</span>
-        <span>Paris, France</span>
+    <div class="container">
+      <div class="contact-panel reveal">
+        <h2><span data-fr>Voyons à quoi ressemblerait votre site.</span><span data-en>Let's see what your site could look like.</span></h2>
+        <p><span data-fr>Recevez une maquette gratuite de votre futur site. Sans engagement, sans pression.</span><span data-en>Get a free mockup of your future site. No commitment, no pressure.</span></p>
+        <div class="contact-actions">
+          <a class="btn btn-primary btn-lg" href="https://wa.me/33603440050" target="_blank" rel="noopener"><span data-fr>Discuter sur WhatsApp</span><span data-en>Chat on WhatsApp</span> <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost btn-lg" href="sms:+33603440050"><span data-fr>Envoyer un SMS</span><span data-en>Send an SMS</span></a>
+        </div>
+        <div class="contact-meta">
+          <a href="tel:+33603440050">06 03 44 00 50</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href="mailto:studiovelaparis@gmail.com">studiovelaparis@gmail.com</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span>Paris, France</span>
+        </div>
       </div>
     </div>
   </section>
@@ -470,47 +365,40 @@
 </main>
 
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div>
-      <a class="logo footer-logo" href="#top"><span class="logo-dot" aria-hidden="true"></span>Studio&nbsp;Vela</a>
-      <p class="footer-about">Création de sites web sur-mesure pour artisans, commerces et services locaux à Paris et en Île-de-France.</p>
-    </div>
-    <div>
-      <h2 class="footer-h">Navigation</h2>
-      <ul>
-        <li><a href="#realisations">Réalisations</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#packs">Packs</a></li>
-        <li><a href="#process">Process</a></li>
-      </ul>
-    </div>
-    <div>
-      <h2 class="footer-h">Contact</h2>
-      <ul>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span>Studio&nbsp;Vela</a>
+        <p class="footer-about"><span data-fr>Studio de création de sites web sur-mesure pour artisans, commerces et services locaux à Paris et en Île-de-France.</span><span data-en>A web design studio crafting custom sites for artisans, shops and local services across Paris and Île-de-France.</span></p>
+      </div>
+      <div class="footer-col"><h4><span data-fr>Site</span><span data-en>Site</span></h4><ul>
+        <li><a href="#expertise"><span data-fr>Expertise</span><span data-en>Expertise</span></a></li>
+        <li><a href="#realisations"><span data-fr>Démos</span><span data-en>Demos</span></a></li>
+        <li><a href="#packs"><span data-fr>Tarifs</span><span data-en>Pricing</span></a></li>
+        <li><a href="#process"><span data-fr>Méthode</span><span data-en>Process</span></a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul>
         <li><a href="https://wa.me/33603440050" target="_blank" rel="noopener">WhatsApp</a></li>
         <li><a href="sms:+33603440050">SMS</a></li>
         <li><a href="tel:+33603440050">06 03 44 00 50</a></li>
         <li><a href="mailto:studiovelaparis@gmail.com">studiovelaparis@gmail.com</a></li>
-        <li>Paris, France</li>
-      </ul>
+      </ul></div>
+      <div class="footer-col"><h4><span data-fr>Légal</span><span data-en>Legal</span></h4><ul>
+        <li><a href="mentions-legales.html"><span data-fr>Mentions légales</span><span data-en>Legal notice</span></a></li>
+        <li><a href="politique-confidentialite.html"><span data-fr>Confidentialité</span><span data-en>Privacy</span></a></li>
+        <li><a href="cgv.html">CGV</a></li>
+      </ul></div>
     </div>
-  </div>
-  <div class="container footer-bottom">
-    <span>© 2026 Studio Vela — Farham Fakouri</span>
-    <span class="footer-legal">
-      <a href="mentions-legales.html">Mentions légales</a> ·
-      <a href="politique-confidentialite.html">Confidentialité</a> ·
-      <a href="cgv.html">CGV</a> ·
-      <span>SIRET 988 637 971 00017</span>
-    </span>
+    <div class="footer-bottom">
+      <span>© 2026 Studio Vela — Farham Fakouri</span>
+      <span>SIRET 988 637 971 00017 · Paris, France</span>
+    </div>
   </div>
 </footer>
 
-<!-- Sticky mobile contact bar -->
-<div class="mobile-bar" aria-label="Contact rapide">
-  <a class="mbar-btn mbar-wa" href="https://wa.me/33603440050" target="_blank" rel="noopener">WhatsApp</a>
-  <a class="mbar-btn mbar-sms" href="sms:+33603440050">SMS</a>
-  <a class="mbar-btn mbar-call" href="tel:+33603440050">Appeler</a>
+<div class="mobile-bar">
+  <a class="mbar-sms" href="sms:+33603440050"><span data-fr>SMS</span><span data-en>SMS</span></a>
+  <a class="mbar-wa" href="https://wa.me/33603440050" target="_blank" rel="noopener"><span data-fr>Maquette gratuite</span><span data-en>Free mockup</span></a>
 </div>
 
 <script type="application/ld+json">
@@ -518,17 +406,13 @@
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Studio Vela",
-  "description": "Création de sites web sur-mesure pour artisans, commerces et services locaux à Paris.",
+  "description": "Studio de création de sites web sur-mesure pour artisans et commerces à Paris.",
   "founder": "Farham Fakouri",
   "areaServed": "Paris, Île-de-France",
+  "availableLanguage": ["fr", "en"],
   "telephone": "+33603440050",
   "email": "studiovelaparis@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "6 rue Marie Curie",
-    "addressLocality": "Soisy",
-    "addressCountry": "FR"
-  },
+  "address": { "@type": "PostalAddress", "streetAddress": "6 rue Marie Curie", "addressLocality": "Soisy", "addressCountry": "FR" },
   "url": "https://studiovela.fr/"
 }
 </script>
