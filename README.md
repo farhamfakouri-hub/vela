@@ -82,6 +82,12 @@ Aucun script de tracking, aucun analytics, aucun cookie de suivi, aucune newslet
 - Formulaire de devis optionnel via Formspree ou Netlify Forms (sans backend).
 - Préciser la commune exacte (Soisy-sous-Montmorency 95 / Soisy-sur-Seine 91) dans les pages légales.
 
+## Enrichissement des démos (v3)
+
+Chaque démo est désormais une mini-maquette riche et différenciée, avec sa propre identité fictive complète (nom, adresse démo, téléphone, email, horaires), des services détaillés avec tarifs indicatifs et durées, un formulaire spécifique au métier (**frontend uniquement — aucune donnée envoyée**), du contenu SEO local, une FAQ, des emplacements média stylés (pas de boîtes grises vides) et une direction artistique distincte (palette, typographie, rythme de mise en page, langage de motion). Toutes les informations sont fictives et clairement étiquetées comme démonstration.
+
+La page d'accueil propose désormais des cartes portfolio avec angle stratégique, une section « Ce que vous recevez » et une section « Inclus / non inclus » pour clarifier l'offre.
+
 ## Placeholders à remplacer AVANT publication
 
 La plupart des informations sont désormais confirmées. Restent à compléter&nbsp;:
