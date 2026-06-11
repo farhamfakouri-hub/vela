@@ -1,0 +1,240 @@
+/* ============================================================
+   Studio Vela — motion.css
+   Transcribed from the Motion Design Specification (Stage 10).
+   Personality: "L'Entrée" — things illuminate and settle.
+   All initial hidden states are gated under html.js, which an
+   inline head script sets before first paint: with JavaScript
+   off, every element is visible (the site works without JS).
+   A <noscript> block in each page doubles this guarantee for
+   the hero.
+   ============================================================ */
+
+/* ─── L'Entrée: initial hidden states (CSS, not JS — no FOUC) ─── */
+html.js .hero-window-asset,
+html.js .hero-heading,
+html.js .hero-subhead,
+html.js .hero-cta-primary,
+html.js .hero-pairing,
+html.js .hero-frame-line {
+  opacity: 0;
+}
+
+html.js .hero-heading,
+html.js .hero-subhead,
+html.js .hero-cta-primary,
+html.js .hero-pairing {
+  transform: translateY(24px);
+}
+
+/* Transitions fire when JS adds body.is-ready on DOMContentLoaded.
+   Exact stagger from the Motion Spec timing table. */
+html.js body.is-ready .hero-window-asset {
+  opacity: 1;
+  transition: opacity 700ms var(--ease-entrance) 0ms;
+}
+
+html.js body.is-ready .hero-heading {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 700ms var(--ease-entrance) 80ms,
+              transform 700ms var(--ease-entrance) 80ms;
+}
+
+html.js body.is-ready .hero-subhead {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 700ms var(--ease-entrance) 160ms,
+              transform 700ms var(--ease-entrance) 160ms;
+}
+
+html.js body.is-ready .hero-cta-primary {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 700ms var(--ease-entrance) 240ms,
+              transform 700ms var(--ease-entrance) 240ms;
+}
+
+html.js body.is-ready .hero-pairing {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 700ms var(--ease-entrance) 320ms,
+              transform 700ms var(--ease-entrance) 320ms;
+}
+
+/* The engraving completing last — opacity 0 → 0.5 (frame rest state) */
+html.js body.is-ready .hero-frame-line {
+  opacity: 0.5;
+  transition: opacity 900ms var(--ease-entrance) 400ms;
+}
+
+/* ─── Section scroll reveals (J2–J7, FAQ, legitimacy) ───
+   16px rise — interior moves, quieter than the entrance. */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms var(--ease-entrance) var(--reveal-delay, 0ms),
+              transform 600ms var(--ease-entrance) var(--reveal-delay, 0ms);
+}
+
+html.js [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Behavior 2: Guilloché line-draw (the threshold scribes itself) ─── */
+html.js .threshold {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 700ms var(--ease-entrance);
+}
+
+html.js .threshold.is-visible {
+  clip-path: inset(0 0% 0 0);
+}
+
+/* ─── Behavior 4: Vitrine-frame draw (clockwise, then the image) ───
+   --card-delay is injected per card by motion.js (index × 80ms). */
+html.js .exhibit-card .frame-edge-top,
+html.js .exhibit-card .frame-edge-bottom {
+  transform: scaleX(0);
+}
+
+html.js .exhibit-card .frame-edge-right,
+html.js .exhibit-card .frame-edge-left {
+  transform: scaleY(0);
+}
+
+html.js .exhibit-card .frame-edge {
+  transition: transform 300ms var(--ease-ui);
+}
+
+html.js .exhibit-card .exhibit-image {
+  opacity: 0;
+  transition: opacity 300ms var(--ease-entrance);
+}
+
+html.js .exhibit-card.is-visible .frame-edge-top {
+  transform: scaleX(1);
+  transition-delay: var(--card-delay, 0ms);
+}
+
+html.js .exhibit-card.is-visible .frame-edge-right {
+  transform: scaleY(1);
+  transition-delay: calc(var(--card-delay, 0ms) + 180ms);
+}
+
+html.js .exhibit-card.is-visible .frame-edge-bottom {
+  transform: scaleX(1);
+  transition-delay: calc(var(--card-delay, 0ms) + 360ms);
+}
+
+html.js .exhibit-card.is-visible .frame-edge-left {
+  transform: scaleY(1);
+  transition-delay: calc(var(--card-delay, 0ms) + 540ms);
+}
+
+html.js .exhibit-card.is-visible .exhibit-image {
+  opacity: 1;
+  transition-delay: calc(var(--card-delay, 0ms) + 680ms);
+}
+
+/* ─── Behavior 5: Process rail draw (structure before content) ───
+   --step-delay is injected per step by motion.js (index × 120ms). */
+html.js .process-rail {
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 800ms var(--ease-entrance);
+}
+
+html.js .process-mono-label,
+html.js .process-title,
+html.js .process-body {
+  opacity: 0;
+  transition: opacity 400ms var(--ease-entrance);
+}
+
+html.js .process-section.is-visible .process-rail {
+  transform: scaleY(1);
+  transition-delay: var(--step-delay, 0ms);
+}
+
+html.js .process-section.is-visible .process-mono-label {
+  opacity: 1;
+  transition-delay: calc(var(--step-delay, 0ms) + 600ms);
+}
+
+html.js .process-section.is-visible .process-title {
+  opacity: 1;
+  transition-delay: calc(var(--step-delay, 0ms) + 700ms);
+}
+
+html.js .process-section.is-visible .process-body {
+  opacity: 1;
+  transition-delay: calc(var(--step-delay, 0ms) + 800ms);
+}
+
+/* ─── prefers-reduced-motion: the complete fallback block ───
+   Per-behavior graceful end states (Motion Spec §Accessibility).
+   The content is identical; only the theatricality is removed. */
+@media (prefers-reduced-motion: reduce) {
+  /* Hero sequence — everything visible, no translate, no stagger */
+  html.js .hero-window-asset,
+  html.js .hero-heading,
+  html.js .hero-subhead,
+  html.js .hero-cta-primary,
+  html.js .hero-pairing,
+  html.js .hero-frame-line {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html.js .hero-frame-line {
+    opacity: 0.5 !important;
+  }
+
+  /* All scroll-reveal elements */
+  html.js [data-reveal],
+  html.js .threshold,
+  html.js .exhibit-card .frame-edge-top,
+  html.js .exhibit-card .frame-edge-right,
+  html.js .exhibit-card .frame-edge-bottom,
+  html.js .exhibit-card .frame-edge-left,
+  html.js .process-rail,
+  html.js .process-mono-label,
+  html.js .process-title,
+  html.js .process-body {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    transition: none !important;
+  }
+
+  /* The exhibit image still fades in 150ms — intentional, not vestibular */
+  html.js .exhibit-card .exhibit-image {
+    transition: opacity 150ms var(--ease-entrance) !important;
+    transition-delay: 0ms !important;
+  }
+
+  html.js .exhibit-card.is-visible .exhibit-image {
+    opacity: 1;
+  }
+
+  /* UI microinteractions — state changes preserved, timing removed */
+  .cta-primary,
+  .cta-secondary,
+  .nav-link,
+  .nav-link::after,
+  .faq-panel,
+  .faq-icon,
+  .nav-drawer,
+  .nav-backdrop,
+  .sticky-cell,
+  .toggle-cell,
+  .exhibit-card,
+  .site-nav,
+  .bi > [lang],
+  .bi-inline > [lang] {
+    transition-duration: 0ms !important;
+    transition-delay: 0ms !important;
+  }
+}

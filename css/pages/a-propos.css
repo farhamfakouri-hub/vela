@@ -1,0 +1,22 @@
+/* Studio Vela — a-propos.css */
+
+.about-content {
+  display: grid;
+  gap: var(--space-5);
+  max-width: var(--container-narrow);
+}
+
+.about-content .about-meta {
+  color: var(--color-interior-text-muted);
+}
+
+.about-hallmark {
+  margin: var(--space-7) 0;
+}
+
+.about-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}

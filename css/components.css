@@ -1,0 +1,1324 @@
+/* ============================================================
+   Studio Vela — components.css
+   The 12 components of the Visual Design System (Stage 9),
+   transcribed with every state, plus the contact form (UX
+   fallback flow) and the footer. No invented values.
+   ============================================================ */
+
+/* ════════════════ 9. Navigation Header ════════════════ */
+.site-nav {
+  position: sticky;
+  top: 0;
+  height: var(--space-nav-h-mobile);
+  background-color: var(--nuit-800);
+  border-bottom: 1px solid var(--nuit-500);
+  z-index: var(--z-nav);
+  transition: border-bottom-color 400ms var(--ease-entrance);
+}
+
+.site-nav.is-scrolled {
+  border-bottom-color: var(--or-chaud-500);
+}
+
+.site-nav .nav-inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 var(--container-padding-x);
+  max-width: var(--container-wide);
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .site-nav {
+    height: var(--space-nav-h);
+  }
+}
+
+/* Wordmark — A16 placeholder: typography-based, founder to finalise */
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  color: var(--or-chaud-500);
+  text-decoration: none;
+  line-height: 1;
+  padding: var(--space-2) 0;
+}
+
+.nav-wordmark:hover {
+  color: var(--or-chaud-400);
+}
+
+/* Desktop links — hidden on mobile, the drawer takes over */
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-6);
+  }
+}
+
+.nav-link {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-facade-text-muted);
+  text-decoration: none;
+  padding: var(--space-2) 0;
+  transition: color 200ms ease-out;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-facade-text);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--or-chaud-500);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 200ms var(--ease-ui);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.nav-link[aria-current="page"] {
+  color: var(--color-facade-text);
+}
+
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+  transition: none;
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--focus-ring-color-dark);
+  outline-offset: 4px;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.nav-actions .lang-toggle {
+  display: none;
+}
+
+.nav-actions .cta-primary {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .nav-actions .lang-toggle {
+    display: inline-flex;
+  }
+
+  .nav-actions .cta-primary {
+    display: inline-flex;
+    min-width: 0;
+  }
+
+  .nav-hamburger {
+    display: none;
+  }
+}
+
+/* Hamburger */
+.nav-hamburger {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--nuit-500);
+  border-radius: var(--radius-sm);
+  color: var(--platre-100);
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-hamburger:focus-visible {
+  outline: 2px solid var(--focus-ring-color-dark);
+  outline-offset: 2px;
+}
+
+.nav-hamburger .icon-close {
+  display: none;
+}
+
+.nav-hamburger[aria-expanded="true"] .icon-burger {
+  display: none;
+}
+
+.nav-hamburger[aria-expanded="true"] .icon-close {
+  display: block;
+}
+
+/* Mobile drawer */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  height: 100dvh;
+  background-color: var(--nuit-800);
+  border-left: 1px solid var(--or-chaud-500);
+  z-index: var(--z-drawer);
+  padding: var(--space-9) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  transform: translateX(100%);
+  transition: transform 350ms var(--ease-exit);
+  visibility: hidden;
+  overflow-y: auto;
+}
+
+body.drawer-is-open .nav-drawer {
+  transform: translateX(0);
+  transition: transform 500ms var(--ease-entrance);
+  visibility: visible;
+}
+
+.nav-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(22, 18, 8, 0.7);
+  z-index: calc(var(--z-drawer) - 1);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 250ms var(--ease-exit), visibility 0s 250ms;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+}
+
+body.drawer-is-open .nav-backdrop {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 300ms var(--ease-subtle), visibility 0s 0s;
+}
+
+body.drawer-is-open {
+  overflow: hidden;
+}
+
+.drawer-link {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--platre-100);
+  text-decoration: none;
+  padding: var(--space-3) 0;
+}
+
+.drawer-link:hover {
+  color: var(--or-chaud-500);
+}
+
+.drawer-link:focus-visible {
+  outline: 2px solid var(--focus-ring-color-dark);
+  outline-offset: 4px;
+}
+
+.drawer-foot {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+
+/* ════════════════ 2. Warm-Doorway CTA ════════════════ */
+.cta-primary {
+  background-color: transparent;
+  border: 1px solid var(--or-chaud-500);
+  color: var(--color-facade-text);
+  padding: var(--space-btn-pad-y) var(--space-btn-pad-x);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  min-height: 48px;
+  min-width: 220px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  text-decoration: none;
+  transition: background-color 400ms var(--ease-entrance),
+              color 400ms var(--ease-entrance),
+              border-color 400ms var(--ease-entrance);
+  cursor: pointer;
+}
+
+.cta-primary:hover {
+  background-color: var(--or-chaud-500);
+  color: var(--nuit-800);
+  border-color: var(--or-chaud-500);
+}
+
+.cta-primary:focus-visible {
+  outline: 2px solid var(--focus-ring-color-dark);
+  outline-offset: 2px;
+}
+
+.cta-primary:active {
+  background-color: var(--or-chaud-600);
+  color: var(--nuit-800);
+  transform: translateY(1px);
+  transition-duration: 80ms;
+}
+
+.cta-primary:disabled,
+.cta-primary[aria-disabled="true"] {
+  background-color: var(--color-disabled-bg);
+  border-color: var(--nuit-500);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.cta-primary .cta-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Interior variant — on Plâtre ground (J7, pricing context on light) */
+.cta-primary--interior {
+  border-color: var(--or-chaud-600);
+  color: var(--nuit-800);
+}
+
+.cta-primary--interior:hover {
+  background-color: var(--or-chaud-600);
+  color: var(--nuit-800);
+  border-color: var(--or-chaud-600);
+}
+
+.cta-primary--interior:focus-visible {
+  outline-color: var(--focus-ring-color-light);
+}
+
+/* Secondary CTA — quiet, stone-coloured, underlined */
+.cta-secondary {
+  background-color: transparent;
+  border: none;
+  color: var(--pierre-400);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-decoration-color: var(--nuit-500);
+  text-underline-offset: 3px;
+  padding: var(--space-3) var(--space-2);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 200ms ease-out, text-decoration-color 200ms ease-out;
+}
+
+.cta-secondary:hover {
+  color: var(--platre-100);
+  text-decoration-color: var(--or-chaud-500);
+}
+
+.register-interior .cta-secondary {
+  color: var(--nuit-400);
+  text-decoration-color: var(--platre-300);
+}
+
+.register-interior .cta-secondary:hover {
+  color: var(--nuit-800);
+  text-decoration-color: var(--or-chaud-600);
+}
+
+/* ════════════════ 1. Gilded Framed-Window Hero ════════════════ */
+.hero-section {
+  position: relative;
+  background-color: var(--color-facade-bg);
+  color: var(--color-facade-text);
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  /* BUILD DEVIATION (flagged): VDS specs a fixed height: 100vh, sized around
+     a 36-char H1 (§Copy Lengths). The locked Stage-7 H1 is 74 chars — five
+     lines at --type-display-xl — which a fixed-height hero clips under the
+     absolutely-positioned pairing on 900px-tall viewports. min-height keeps
+     the full-viewport entrance and lets the hero grow with the real copy. */
+  .hero-section {
+    min-height: max(600px, 100vh);
+  }
+}
+
+.hero-frame-line {
+  position: absolute;
+  inset: auto 1rem 1rem 1rem;
+  top: 1rem;
+  border: 1px solid var(--or-chaud-500);
+  border-top: none;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
+}
+
+@media (min-width: 1024px) {
+  .hero-frame-line {
+    inset: 2rem;
+    border-top: 1px solid var(--or-chaud-500);
+  }
+}
+
+.hero-window-asset {
+  position: relative;
+  z-index: 0;
+}
+
+.hero-window-asset img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 768px) {
+  .hero-window-asset img {
+    height: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-window-asset {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+  }
+
+  .hero-window-asset img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-window-asset::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #161208 0%, rgba(22, 18, 8, 0.9) 35%, rgba(22, 18, 8, 0) 65%);
+    pointer-events: none;
+  }
+}
+
+.hero-copy-rail {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-8) var(--container-padding-x) var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .hero-copy-rail {
+    max-width: 50%;
+    /* --hero-pairing-reserve: space held for the absolutely-positioned
+       bespoke-gap pairing anchored at the hero's bottom (labels + 140px
+       images + caption + gap) so the copy never runs underneath it. */
+    --hero-pairing-reserve: 300px;
+    padding: var(--space-9) 0 calc(var(--space-8) + var(--hero-pairing-reserve)) var(--container-padding-x);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+}
+
+.hero-eyebrow {
+  color: var(--or-chaud-500);
+  margin-bottom: var(--space-4);
+}
+
+.hero-heading {
+  color: var(--color-facade-text);
+  margin-bottom: var(--space-5);
+}
+
+.hero-subhead {
+  color: var(--color-facade-text-muted);
+  max-width: var(--type-measure-tight);
+  margin-bottom: var(--space-6);
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.hero-meta-proof {
+  color: var(--color-facade-text-muted);
+  margin-top: var(--space-4);
+}
+
+/* Bespoke-gap pairing — A04 (cold, unframed) | A05 (warm, framed) */
+.hero-pairing-wrap {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--container-padding-x) var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .hero-pairing-wrap {
+    position: absolute;
+    bottom: var(--space-8);
+    left: 0;
+    width: 50%;
+    padding: 0 var(--space-6) 0 var(--container-padding-x);
+  }
+}
+
+.hero-pairing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background-color: var(--or-chaud-500);
+}
+
+.hero-pairing-cell {
+  background-color: var(--nuit-800);
+}
+
+.hero-pairing-label {
+  display: block;
+  color: var(--or-chaud-500);
+  padding-bottom: var(--space-2);
+  background-color: transparent;
+}
+
+.hero-pairing-cell img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .hero-pairing-cell img {
+    height: 140px;
+  }
+}
+
+.hero-pairing-cell--warm img {
+  border: 1px solid var(--or-chaud-500);
+}
+
+.hero-pairing-caption {
+  color: var(--color-facade-text-muted);
+  margin-top: var(--space-3);
+}
+
+/* ════════════════ 3. Vitrine Demo Exhibit Card ════════════════ */
+.exhibit-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .exhibit-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .exhibit-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-5);
+  }
+}
+
+.exhibit-card {
+  position: relative;
+  background-color: var(--color-interior-surface);
+  border: 1px solid var(--or-chaud-500);
+  border-radius: var(--radius-none);
+  overflow: hidden;
+  transition: border-color 300ms var(--ease-entrance),
+              box-shadow 300ms var(--ease-entrance);
+}
+
+.exhibit-card:hover {
+  border-color: var(--or-chaud-400);
+  box-shadow: inset 0 0 0 1px var(--or-chaud-400);
+}
+
+.exhibit-card:focus-within {
+  outline: 2px solid var(--focus-ring-color-light);
+  outline-offset: 2px;
+}
+
+/* Frame edges for the vitrine-frame draw (Motion Behavior 4) */
+.frame-edge {
+  position: absolute;
+  background-color: var(--or-chaud-500);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.frame-edge-top    { top: 0;    left: 0;  right: 0;  height: 1px; transform-origin: left;   }
+.frame-edge-right  { top: 0;    right: 0; bottom: 0; width: 1px;  transform-origin: top;    }
+.frame-edge-bottom { bottom: 0; left: 0;  right: 0;  height: 1px; transform-origin: right;  }
+.frame-edge-left   { top: 0;    left: 0;  bottom: 0; width: 1px;  transform-origin: bottom; }
+
+.exhibit-demo-label {
+  display: block;
+  color: var(--or-chaud-700); /* AA gold for 12px mono on light — see tokens.css */
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--platre-300);
+}
+
+.exhibit-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (min-width: 768px) {
+  .exhibit-image {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.exhibit-body {
+  padding: var(--space-4) var(--space-card-pad-x) var(--space-card-pad-y);
+  border-top: 1px solid var(--or-chaud-500);
+}
+
+.exhibit-title {
+  color: var(--color-interior-text);
+  margin-bottom: var(--space-2);
+}
+
+.exhibit-desc {
+  color: var(--color-interior-text);
+  margin-bottom: var(--space-3);
+}
+
+.exhibit-link {
+  color: var(--or-chaud-700); /* AA gold for small text on light — see tokens.css */
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 44px;
+}
+
+.exhibit-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.exhibit-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* ════════════════ 4. Tiers-as-Rooms Pricing Ladder ════════════════ */
+.pricing-section {
+  background-color: var(--color-facade-bg);
+  color: var(--color-facade-text);
+}
+
+.tier-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .tier-grid {
+    grid-template-columns: 1fr 1.1fr 1fr;
+    gap: var(--space-5);
+    padding-top: var(--space-5);
+  }
+}
+
+.tier {
+  position: relative;
+  background-color: var(--nuit-700);
+  border: 1px solid var(--nuit-500);
+  padding: var(--space-6);
+  border-radius: var(--radius-none);
+}
+
+.tier--quiet {
+  opacity: 0.85;
+}
+
+.tier--pro {
+  border-color: var(--or-chaud-500);
+  padding: var(--space-7) var(--space-6);
+}
+
+@media (min-width: 1024px) {
+  .tier--pro {
+    transform: translateY(-16px);
+  }
+}
+
+.tier-badge {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: var(--or-chaud-500);
+  color: var(--nuit-800);
+  padding: 4px 12px;
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.tier-name {
+  color: var(--platre-100);
+  margin-bottom: var(--space-2);
+}
+
+.tier-price {
+  color: var(--or-chaud-500);
+  margin-bottom: var(--space-4);
+}
+
+.tier-rule {
+  border: none;
+  border-top: 1px solid var(--nuit-500);
+  margin: var(--space-4) 0;
+}
+
+.tier-features {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--platre-100);
+}
+
+.tier .cta-primary {
+  width: 100%;
+  min-width: 0;
+  margin-top: var(--space-4);
+}
+
+.tier-maintenance {
+  margin-top: var(--space-6);
+  background-color: var(--nuit-700);
+  border: 1px solid var(--nuit-500);
+  padding: var(--space-5) var(--space-6);
+  display: grid;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .tier-maintenance {
+    grid-template-columns: auto 1fr;
+    gap: var(--space-2) var(--space-6);
+    align-items: baseline;
+  }
+}
+
+.pricing-notes {
+  margin-top: var(--space-6);
+  display: grid;
+  gap: var(--space-2);
+  color: var(--color-facade-text-muted);
+}
+
+.pricing-notes .des-note {
+  color: var(--or-chaud-500);
+}
+
+/* ════════════════ 5. Vertical Walk-Through Process ════════════════ */
+.process-section {
+  background-color: var(--color-interior-bg);
+  color: var(--color-interior-text);
+}
+
+.process-steps {
+  display: grid;
+  gap: var(--space-7);
+  margin-top: var(--space-6);
+  max-width: var(--container-narrow);
+}
+
+.process-step {
+  display: grid;
+  grid-template-columns: 2px 1fr;
+  gap: 0 var(--space-5);
+}
+
+.process-rail {
+  width: 2px;
+  background-color: var(--or-chaud-500);
+  height: 100%;
+}
+
+.process-mono-label {
+  color: var(--or-chaud-700); /* AA gold for 12px mono on light — see tokens.css */
+  margin-bottom: var(--space-2);
+}
+
+.process-title {
+  color: var(--color-interior-text);
+  margin-bottom: var(--space-3);
+}
+
+.process-body {
+  color: var(--color-interior-text);
+  max-width: var(--type-measure-body);
+}
+
+.process-trust {
+  margin-top: var(--space-7);
+  color: var(--color-interior-text-muted);
+  max-width: var(--container-narrow);
+}
+
+/* ════════════════ 6. Engraved SIRET Hallmark Block ════════════════ */
+.hallmark-block {
+  background-color: var(--color-interior-bg);
+  border: 1px solid var(--or-chaud-500);
+  padding: var(--space-5) var(--space-4);
+  border-radius: var(--radius-none);
+  text-align: center;
+  max-width: var(--container-narrow);
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .hallmark-block {
+    padding: var(--space-6) var(--space-7);
+  }
+}
+
+.hallmark-mark {
+  height: 28px;
+  width: auto;
+  color: var(--or-chaud-500);
+  display: block;
+  margin: 0 auto var(--space-3);
+}
+
+.hallmark-text {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  color: var(--nuit-800);
+  line-height: 1.8;
+}
+
+/* ════════════════ 7. Sticky Mobile Contact Bar ════════════════ */
+.sticky-contact-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--space-sticky-bar-h) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  background-color: var(--nuit-800);
+  border-top: 1px solid var(--or-chaud-500);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  z-index: var(--z-sticky);
+}
+
+@media (min-width: 768px) {
+  .sticky-contact-bar {
+    display: none;
+  }
+}
+
+.sticky-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: 44px;
+  padding: var(--space-2) 0;
+  color: var(--color-facade-text);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-right: 1px solid var(--nuit-500);
+  transition: background-color 200ms var(--ease-ui), transform 100ms var(--ease-ui);
+}
+
+.sticky-cell:last-child {
+  border-right: none;
+}
+
+.sticky-cell:hover {
+  background-color: var(--nuit-700);
+}
+
+.sticky-cell:active {
+  transform: scale(0.97);
+}
+
+.sticky-cell:focus-visible {
+  outline: 2px solid var(--focus-ring-color-dark);
+  outline-offset: -2px;
+}
+
+.sticky-cell--whatsapp {
+  color: var(--or-chaud-500);
+  font-weight: 600;
+}
+
+.sticky-cell svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ════════════════ 8. FR/EN Language Toggle ════════════════ */
+.lang-toggle {
+  display: inline-flex;
+  border: 1px solid var(--or-chaud-500);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.toggle-cell {
+  padding: 6px 14px;
+  min-height: 44px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: var(--color-facade-text);
+}
+
+.toggle-cell[aria-pressed="true"] {
+  background-color: var(--or-chaud-500);
+  color: var(--nuit-800);
+}
+
+.toggle-cell[aria-pressed="false"]:hover {
+  background-color: var(--nuit-700);
+}
+
+.toggle-cell:focus-visible {
+  outline: 2px solid var(--focus-ring-color-dark);
+  outline-offset: 2px;
+  border-radius: var(--radius-pill);
+}
+
+/* ════════════════ 11. DEMO label (standalone usage) ════════════════ */
+.demo-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--or-chaud-500); /* on dark page-head grounds — 5.9:1 */
+  display: block;
+}
+
+.register-interior .demo-label {
+  color: var(--or-chaud-700); /* AA gold for 12px mono on light — see tokens.css */
+}
+
+/* ════════════════ 12. FAQ Disclosure ════════════════ */
+.faq-list {
+  max-width: var(--container-narrow);
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--platre-300);
+  background-color: transparent;
+}
+
+.faq-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  min-height: 56px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-interior-text);
+  list-style: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-summary:hover {
+  color: var(--or-chaud-600);
+}
+
+.faq-summary:hover .faq-icon {
+  color: var(--or-chaud-600);
+}
+
+.faq-summary:focus-visible {
+  outline: 2px solid var(--focus-ring-color-light);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.faq-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--or-chaud-500);
+  transition: transform 300ms var(--ease-subtle);
+}
+
+.faq-item[open] > .faq-summary .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-panel {
+  padding: 0 0 var(--space-5);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--color-interior-text);
+  max-width: var(--type-measure-body);
+  overflow: hidden;
+}
+
+/* ════════════════ Contact rails & fallback form ════════════════ */
+.contact-rails {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.contact-alt-rails {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.rail-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-interior-text);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: underline;
+  text-decoration-color: var(--platre-300);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 200ms ease-out;
+}
+
+.rail-link:hover {
+  text-decoration-color: var(--or-chaud-600);
+}
+
+.rail-link svg {
+  width: 16px;
+  height: 16px;
+  color: var(--or-chaud-600);
+}
+
+.contact-form {
+  max-width: var(--container-narrow);
+  display: grid;
+  gap: var(--space-5);
+  margin-top: var(--space-6);
+}
+
+.form-field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form-field label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-interior-text);
+}
+
+.form-hint {
+  color: var(--color-interior-text-muted);
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  min-height: 48px;
+  background-color: var(--platre-50);
+  border: 1px solid var(--border-color-input);
+  border-radius: var(--radius-sm);
+  color: var(--nuit-800);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.form-field input:focus-visible,
+.form-field textarea:focus-visible {
+  outline: 2px solid var(--focus-ring-color-light);
+  outline-offset: 2px;
+  border-color: var(--border-color-input-focus);
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+  border-color: var(--border-color-error);
+}
+
+.form-error {
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-error);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+}
+
+.form-error.is-active {
+  display: flex;
+}
+
+.form-error svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.form-reassure {
+  color: var(--color-interior-text-muted);
+}
+
+/* Honeypot — honest spam protection, no CAPTCHA wall */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ════════════════ Breadcrumb (demo subpages) ════════════════ */
+.breadcrumb {
+  margin-bottom: var(--space-4);
+}
+
+.breadcrumb ol {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+}
+
+.breadcrumb a {
+  color: var(--color-facade-text-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--nuit-500);
+  text-underline-offset: 3px;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-facade-text);
+  text-decoration-color: var(--or-chaud-500);
+}
+
+.breadcrumb .crumb-sep {
+  color: var(--nuit-500);
+}
+
+.breadcrumb [aria-current="page"] {
+  color: var(--or-chaud-500);
+}
+
+/* ════════════════ Footer (J8 — facade register) ════════════════ */
+.site-footer {
+  position: relative;
+  background-color: var(--nuit-800);
+  color: var(--platre-100);
+  padding: var(--space-8) 0 var(--space-7);
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/a12a-guilloche-dark.webp');
+  background-repeat: repeat;
+  background-size: 400px 400px;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.site-footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-orientation {
+  color: var(--platre-100);
+  max-width: var(--type-measure-body);
+  margin-bottom: var(--space-6);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: var(--space-7);
+  }
+}
+
+.footer-nap {
+  color: var(--pierre-400);
+  display: grid;
+  gap: var(--space-1);
+}
+
+.footer-nap a {
+  color: var(--platre-100);
+  text-decoration: underline;
+  text-decoration-color: var(--nuit-500);
+  text-underline-offset: 3px;
+}
+
+.footer-nap a:hover {
+  text-decoration-color: var(--or-chaud-500);
+}
+
+.footer-col-title {
+  color: var(--or-chaud-500);
+  margin-bottom: var(--space-3);
+}
+
+.footer-links {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.footer-links a {
+  color: var(--color-facade-text-muted);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  padding: var(--space-1) 0;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--platre-100);
+}
+
+.footer-foot {
+  margin-top: var(--space-7);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--nuit-500);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+
+/* ════════════════ Final invitation (J7 — the warm doorway) ════════════════ */
+.invitation-section {
+  background-color: var(--color-interior-bg);
+  color: var(--color-interior-text);
+  text-align: center;
+}
+
+.invitation-heading {
+  color: var(--color-interior-text);
+  margin-bottom: var(--space-5);
+}
+
+.invitation-lead {
+  color: var(--color-interior-text);
+  max-width: var(--type-measure-body);
+  margin: 0 auto var(--space-6);
+}
+
+.invitation-reassure {
+  color: var(--color-interior-text-muted);
+  max-width: var(--type-measure-body);
+  margin: var(--space-5) auto 0;
+}
+
+.invitation-signature {
+  color: var(--color-interior-text-muted);
+  margin-top: var(--space-5);
+}
+
+.invitation-rails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}

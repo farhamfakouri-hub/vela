@@ -1,0 +1,20 @@
+/* Studio Vela — offres.css — tiers + canonical process + FAQ */
+
+.addons-block {
+  margin-top: var(--space-7);
+  max-width: var(--container-narrow);
+  color: var(--color-facade-text-muted);
+}
+
+.addons-block .addons-title {
+  color: var(--or-chaud-500);
+  margin-bottom: var(--space-3);
+}
+
+.faq-section .section-heading {
+  margin-bottom: var(--space-5);
+}
+
+.offres-final-cta {
+  margin-top: var(--space-7);
+}
